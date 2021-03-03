@@ -1,33 +1,31 @@
 # Project 2 Team Charlie Pitch
 
 ## Sean Reimer, Maksym Melnyk, Sainath, Sharath, Arthur Arreguin
-## 2/21/2021
+## 2/25/2021
 
 ## Problem 
-–  Have you always had a problem trying to find the right diet plan for you?  The certain foods you eat can have big effects on your health and quality of life.  Although eating healthy can be fairly simple, the rise in popular “diets” and dieting trends has caused confusion.  In fact, these trends often distract from the basic nutrition principles that are most important.
+– Have you had problems trying to find better eating habits that is more suited for you?  Have you ever wished that there was a way to just look at certain dieting plans with the convenience of your phone/web browser?  There are certain foods that we eat that cause negative effects on our health and quality in life.  Although eating healthy can be fairly simple, the rise in popular “diets” and dieting trends has caused a lot of confusion.  In fact, these trends often distract from the basic nutrition principles that are most important for all of our personal needs.  
 
 ## Solution 
-– This application will be a detailed guide to healthy eating, based on nutritional science. It can develop healthy eating habits for the user by helping them share certain dishes/meals with thier friends and family.  It will also help the user find where they can find these meals/dishes at certain restaurants as well
+– Some users may use our site, not even knowing what they are looking for in the first place.  With our assistance, we can suggest and provide guides, articles, and plans to better eating that suit you. We will implement a user-friendly interface that will display these guides and suggestions with touchscreen technology and swiping through them with ease.  We plan to do this by making our main page displayed with photos of certain foods that catch your interest, which then assists the user where the want to browse right from the get go.
 
-![FoodSearch](https://user-images.githubusercontent.com/57924210/108653329-c2a80700-748b-11eb-8897-51dcfa7ee810.png)
-![Backend](https://user-images.githubusercontent.com/57924210/108653326-c2a80700-748b-11eb-864e-1f1fa923fcf0.png)
+![interface-sketch](https://user-images.githubusercontent.com/57924210/109244475-6521fc00-77a4-11eb-88ec-c9338a8d485e.PNG)
 
-- We will be using two APIs for our project: 
-- 1. To obtain recipes and their nutrition: https://developer.edamam.com/
-- 2. Find/search restaurants: https://documenu.com/docs#get_menu_items_for_restaurant
+- APIs for our project: (update these and select on one)
+- 1. FoodData Central: https://fdc.nal.usda.gov/api-guide.html
+- 2. HealthData.gov: https://healthdata.gov/api
+- 3. RapidAPI: https://rapidapi.com/collection/nutrition
 
 ## Appetite 
 – We want to be able to fit this project within a timeframe of 6 weeks
 
 ## Rabbit Holes 
-- User interface will be too complex if the user tries to add a food item that is not included within the APIs.
-- User may have a difficult time trying to save their modified meals/recipes/ingredients
+- Our site may be too complex if we don't supply a user-friendly interface that can start them off with either suggestions or guides to better dieting
+- If we don't assist the user with navigating our main page, then they may have a difficult time finding exactly what it is they are looking for
 
 ## No Goes
-* Due to time constrains we would be only providing service in the local city, in our case it's Chicago.
-* Service will only serve users with an account and no guest users.
-* Our team is not thinking about making a email notification system for the service. 
-* Service will not include routs and directions for the serving restaurants.
-* Service will be advising but not professionaly recommending nutritions/diets due to legal restrictions.
+* Service will only be provided to guest users.
+* Service will not include routes and directions for restaurants.
+* Service will be advising but not professionally recommending nutritions/diets/plans due to legal restrictions.
 * Service will not have an integrated map feature.
-* Service will not promote or advertise buisnesses or will be used as a advertisement platform.
+* Service will not promote or advertise businesses.
