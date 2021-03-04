@@ -1,6 +1,6 @@
 # Project 2 Team Charlie Pitch
 
-## Sean Reimer, Maksym Melnyk, Sainath, Sharath, Arthur Arreguin
+## Sean Reimer, Maksym Melnyk, Sainath Reddy, Sharath Manchikatla, Arthur Arreguin
 ## 2/25/2021
 
 ## Problem 
@@ -11,10 +11,9 @@
 
 ![interface-sketch](https://user-images.githubusercontent.com/57924210/109244475-6521fc00-77a4-11eb-88ec-c9338a8d485e.PNG)
 
-- APIs for our project: (update these and select on one)
-- 1. FoodData Central: https://fdc.nal.usda.gov/api-guide.html
-- 2. HealthData.gov: https://healthdata.gov/api
-- 3. RapidAPI: https://rapidapi.com/collection/nutrition
+- APIs for our project
+- 1. Recipe Search API: https://developer.edamam.com/edamam-recipe-api 
+- 2. RapidAPI: https://rapidapi.com/collection/nutrition
 
 ## Appetite 
 – We want to be able to fit this project within a timeframe of 6 weeks
