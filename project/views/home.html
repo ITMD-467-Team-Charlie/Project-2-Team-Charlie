@@ -8,268 +8,292 @@
 </head>
 <body>
 
-<div class="navbar">
-  <a href="#home">Home</a>
-  
-  <div class="dropdown">
-    <button class="dropbtn">Health
-      <i class="fa fa-caret-down"></i>
-    </button>
-    <div class="dropdown-content">  
-      <div class="column">
-          <a href="javascript:loadDishes('alcohol-free')">Alcohol-free</a>
-          <a href="javascript:loadDishes('immuno-supportive')">Immune-Supportive</a>
-          <a href="javascript:loadDishes('celery-free')">Celery-free</a>
-          <a href="javascript:loadDishes('crustacean-free')">Crustcean-free</a>
-          <a href="javascript:loadDishes('dairy-free')">Dairy-free</a>
-        </div>
-		<div class="column">
-		  <a href="javascript:loadDishes('egg-free')">Eggs-free</a>
-          <a href="javascript:loadDishes('fish-free')">Fish-free</a>
-          <a href="javascript:loadDishes('fodmap-free')">FODMAP free</a>
-          <a href="javascript:loadDishes('gluten-free')">Gluten free</a>
-          <a href="javascript:loadDishes('keto-friendly')">Keto Friendly</a>
-        </div>
-		<div class="column">
-		  <a href="javascript:loadDishes('kidney-friendly')">Kidney friendly</a>
-          <a href="javascript:loadDishes('kosher')">Kosher</a>
-          <a href="javascript:loadDishes('low-potassium')">Low potassium</a>
-          <a href="javascript:loadDishes('lupine-free')">Lupine-free</a>
-          <a href="javascript:loadDishes('mustard-free')">Mustard-free</a>
-        </div>
-		<div class="column">
-          <a href="javascript:loadDishes('No-oil-added')">No oil added</a>
-          <a href="javascript:loadDishes('low-sugar')">No-sugar</a>
-          <a href="javascript:loadDishes('paleo')">Paleo</a>
-          <a href="javascript:loadDishes('vegetarian')">Vegetarian</a>
-		  <a href="javascript:loadDishes('vegan')">Vegan</a>
-        </div>
-      </div>
-    </div>
-  
-  <div class="dropdown">
-    <button class="dropbtn">Diet 
-      <i class="fa fa-caret-down"></i>
-    </button>
-    <div class="dropdown-content">  
-      <div class="column">
-          <a href="javascript:loadDishes('balanced')">Balanced</a>
-          <a href="javascript:loadDishes('high-fiber')">High-Fiber</a>
-          <a href="javascript:loadDishes('high-protein')">High-Protein</a>
-          <a href="javascript:loadDishes('low-carb')">Low-Carb</a>
-          <a href="javascript:loadDishes('low-fat')">Low-Fat</a>
-        </div>
-		<div class="column">
-		  <a href="javascript:loadDishes('low-sodium')">Low-Sodium</a>
-        </div>
-		<div class="column">
-		  
-        </div>
-		<div class="column">
-         
-        </div>
-      </div>
-    </div>
-  
-  
-  <div class="dropdown">
-    <button class="dropbtn">Cuisine Type 
-      <i class="fa fa-caret-down"></i>
-    </button>
-    <div class="dropdown-content">  
-      <div class="rowN">
-        <div class="column">
-          <a href="javascript:loadDishes('American')">American</a>
-          <a href="javascript:loadDishes('Asian')">Asian</a>
-          <a href="javascript:loadDishes('British')">British</a>
-          <a href="javascript:loadDishes('Central Europe')">Central Europe</a>
-          <a href="javascript:loadDishes('Chinese')">Chinese</a>
-        </div>
-        
-        <div class="column">
-          <a href="javascript:loadDishes('Eastern Europe')">Eastern Europe</a>
-          <a href="javascript:loadDishes('French')">French</a>
-          <a href="javascript:loadDishes('Indian')">Indian</a>
-		  <a href="javascript:loadDishes('Italian')">Italian</a>
-          <a href="javascript:loadDishes('South East Asian')">South East Asian</a>
-        </div>
-		
-        <div class="column">
-          <a href="javascript:loadDishes('Japanese')">Japanese</a>
-          <a href="javascript:loadDishes('Mediterranean')">Mediterranean</a>
-		  <a href="javascript:loadDishes('Mexican')">Mexican</a>
-          <a href="javascript:loadDishes('Middle Eastern')">Middle Eastern</a>
-          <a href="javascript:loadDishes('South American')">South American</a>
-        </div>
-		
-		<div class="column">
-		  <a href="javascript:loadDishes('Caribbean')">Caribbean</a>
-          <a href="javascript:loadDishes('Nordic')">Nordic</a>
-          <a href="javascript:loadDishes('Kosher')">Kosher</a>
-        </div>
-		
-      </div>
-    </div>
+<!-- Side navigation -->
+<div class="sidenav">
+  <h3> Min. Calories</h3>
+  <div class="slidecontainer">
+	  <input type="range" min="0" max="10000" value="0" step="100" class="slider" id="minCal">
+	  <p>Value: <span id="demo1"></span></p>
   </div>
-  
-  <div class="dropdown">
-    <button class="dropbtn">Dish Type 
-      <i class="fa fa-caret-down"></i>
-    </button>
-    <div class="dropdown-content">  
-      <div class="column">
-          <a href="javascript:loadDishes('Starter')">Starter</a>
-          <a href="javascript:loadDishes('Soup')">Soup</a>
-          <a href="javascript:loadDishes('Sandwiches')">Sandwiches</a>
-          <a href="javascript:loadDishes('Salad')">Salad</a>
-          <a href="javascript:loadDishes('Preserve')">Preserve</a>
-        </div>
-		<div class="column">
-          <a href="javascript:loadDishes('Preps')">Preps</a>
-          <a href="javascript:loadDishes('Pancake')">Pancake</a>
-          <a href="javascript:loadDishes('Omelet')">Omelet</a>
-          <a href="javascript:loadDishes('Main course')">Main course</a>
-          <a href="javascript:loadDishes('Egg')">Egg</a>
-        </div>
-		<div class="column">
-          <a href="javascript:loadDishes('Desserts')">Desserts</a>
-          <a href="javascript:loadDishes('Drinks')">Drinks</a>
-          <a href="javascript:loadDishes('Condiments and sauces')">Condiments and sauces</a>
-          <a href="javascript:loadDishes('Cereals')">Cereals</a>
-          <a href="javascript:loadDishes('Bread')">Bread</a>
-        </div>
-		<div class="column">
-          <a href="javascript:loadDishes('Biscuits and cookies')">Biscuits and cookies</a>
-          <a href="javascript:loadDishes('Alcohol-cocktail')">Alcohol-cocktail</a>
-        </div>
-		
-      </div>
-    </div>
-	
-	<div class="dropdown">
-    <button class="dropbtn">Meal Type 
-      <i class="fa fa-caret-down"></i>
-    </button>
-    <div class="dropdown-content">  
-      <div class="column">
-          <a href="javascript:loadDishes('Breakfast')">Breakfast</a>
-          <a href="javascript:loadDishes('Lunch')">Lunch</a>
-          <a href="javascript:loadDishes('Dinner')">Dinner</a>
-          <a href="javascript:loadDishes('Snack')">Snack</a>
-          <a href="javascript:loadDishes('Teatime')">Teatime</a>
-        </div>
-		<div class="column">
-        </div>
-		<div class="column">
-        </div>
-		<div class="column">
-        </div>
-      </div>
-    </div>
-	
-	
-	<div class="dropdown">
-		<button id="myBtn" class="dropbtn">Personal Recomendation
-		  <i class="fa fa-caret-down"></i>
-		</button>
-	</div>
-  <!-- The Modal -->
-	<div id="myModal" class="modal">
-	  <!-- Modal content -->
-	  <div class="modal-content">
-		<span class="close">&times;</span>
-		<div class="modal-body">
-				<div class="container">
-				  <form action="action_page.php">
-					<div class="row">
-					  <div class="col-25">
-						<label for="userGender">Sex (required):</label>
-					  </div>
-					  <div class="col-75">
-						<label class="x">
-								<input type="radio" id="userGender" name="userGender" value="Female" checked="true" onchange="show(this.value);">&nbsp;Female
-						</label>
-						<label class="x">
-								<input type="radio" id="userGender" name="userGender" value="Male" onchange="show(this.value);">&nbsp;Male
-						</label>
-					  </div>
-					</div>
-					
-					<div class="row">
-					  <div class="col-25">
-							<label for="userAge">Age:</label>      
-					  </div>
-					  <div class="col-75">
-						<input type="text" class="x" name="userAge" id="userAge">
-					  </div>
-					</div>
-					
-					<div class="row">
-					  <div class="col-25">
-						<label for="userHeight">Height:</label>                         
-					  </div>
-					  <div class="col-75">
-						<input type="text" class="x" name="userHeight" id="userHeight">
-					  </div>
-					</div>
-					
-					<div class="row">
-					  <div class="col-25">
-						<label for="userWeight">Weight:</label>                
-					  </div>
-					  <div class="col-75">
-						<input type="text" class="x" name="userWeight" id="userWeight">
-					  </div>
-					</div>
-					
-					<div class="row">
-					  <div class="col-25">
-						<label for="userActivity">Activity Level:</label>
-					  </div>
-					  <div class="col-75">
-						<select class="x" name="userActivity" id="userActivity">
-						  <option></option>
-						  <option>Sedentary</option>
-						  <option>LowActive</option>
-						  <option>Active</option>
-						  <option>VeryActive</option>
-						</select>
-					  </div>
-					</div>
-					<div id="women">
-					<div class="row">
-					  <div class="col-25">
-						<label for="pregnancy">Pregnancy:</label>          
-					  </div>
-					  <div class="col-75">
-						<input type="text" class="x" name="pregnancy" id="pregnancy">    
-					  </div>
-					</div>
-					
-					<div class="row">
-					  <div class="col-25">
-						<label for="lactation">Lactation:</label>         
-					  </div>
-					  <div class="col-75">
-						<input type="text" class="x" name="lactation" id="lactation">       
-					  </div>
-					</div>
-					</div>
-					<div class="row">
-					  <input type="submit" value="Submit">
-					</div>
-				  </form>
-				</div>					
-        </div>
-	  </div>
-	</div>
-	
+  </br>
+  <h3> Max. Calories</h3>
+  <div class="slidecontainer">
+	  <input type="range" min="0" max="10000" value="10000" step="100" class="slider" id="maxCal">
+	  <p>Value: <span id="demo2"></span></p>
   </div>
+  </br>
+  <h3> Max. Ingredients</h3>
+  <div class="slidecontainer">
+	  <input type="range" min="0" max="50" value="25" step="5" class="slider" id="maxIngredients">
+	  <p>Value: <span id="demo3"></span></p>
+  </div>
+  </br>
+  </br>
+  <button type="button" id="filter" class="block">Submit</button>
 </div>
 
-<div id="display-dishes" class="content">
+<!-- Page content -->
+<div class="main">
+	
+	<div class="navbar">
+		<a href="#home">Home</a>
   
+		<div class="dropdown">
+		<button class="dropbtn">Health
+		  <i class="fa fa-caret-down"></i>
+		</button>
+		<div class="dropdown-content">  
+		  <div class="column">
+			  <a href="javascript:loadDishes('alcohol-free')">Alcohol-free</a>
+			  <a href="javascript:loadDishes('immuno-supportive')">Immune-Supportive</a>
+			  <a href="javascript:loadDishes('celery-free')">Celery-free</a>
+			  <a href="javascript:loadDishes('crustacean-free')">Crustcean-free</a>
+			  <a href="javascript:loadDishes('dairy-free')">Dairy-free</a>
+			</div>
+			<div class="column">
+			  <a href="javascript:loadDishes('egg-free')">Eggs-free</a>
+			  <a href="javascript:loadDishes('fish-free')">Fish-free</a>
+			  <a href="javascript:loadDishes('fodmap-free')">FODMAP free</a>
+			  <a href="javascript:loadDishes('gluten-free')">Gluten free</a>
+			  <a href="javascript:loadDishes('keto-friendly')">Keto Friendly</a>
+			</div>
+			<div class="column">
+			  <a href="javascript:loadDishes('kidney-friendly')">Kidney friendly</a>
+			  <a href="javascript:loadDishes('kosher')">Kosher</a>
+			  <a href="javascript:loadDishes('low-potassium')">Low potassium</a>
+			  <a href="javascript:loadDishes('lupine-free')">Lupine-free</a>
+			  <a href="javascript:loadDishes('mustard-free')">Mustard-free</a>
+			</div>
+			<div class="column">
+			  <a href="javascript:loadDishes('No-oil-added')">No oil added</a>
+			  <a href="javascript:loadDishes('low-sugar')">No-sugar</a>
+			  <a href="javascript:loadDishes('paleo')">Paleo</a>
+			  <a href="javascript:loadDishes('vegetarian')">Vegetarian</a>
+			  <a href="javascript:loadDishes('vegan')">Vegan</a>
+			</div>
+		  </div>
+		</div>
+  
+		<div class="dropdown">
+		<button class="dropbtn">Diet 
+		  <i class="fa fa-caret-down"></i>
+		</button>
+		<div class="dropdown-content">  
+		  <div class="column">
+			  <a href="javascript:loadDishes('balanced')">Balanced</a>
+			  <a href="javascript:loadDishes('high-fiber')">High-Fiber</a>
+			  <a href="javascript:loadDishes('high-protein')">High-Protein</a>
+			  <a href="javascript:loadDishes('low-carb')">Low-Carb</a>
+			  <a href="javascript:loadDishes('low-fat')">Low-Fat</a>
+			</div>
+			<div class="column">
+			  <a href="javascript:loadDishes('low-sodium')">Low-Sodium</a>
+			</div>
+			<div class="column">
+			  
+			</div>
+			<div class="column">
+			 
+			</div>
+		  </div>
+		</div>
+  
+		<div class="dropdown">
+		<button class="dropbtn">Cuisine Type 
+		  <i class="fa fa-caret-down"></i>
+		</button>
+		<div class="dropdown-content">  
+		  <div class="rowN">
+			<div class="column">
+			  <a href="javascript:loadDishes('American')">American</a>
+			  <a href="javascript:loadDishes('Asian')">Asian</a>
+			  <a href="javascript:loadDishes('British')">British</a>
+			  <a href="javascript:loadDishes('Central Europe')">Central Europe</a>
+			  <a href="javascript:loadDishes('Chinese')">Chinese</a>
+			</div>
+			
+			<div class="column">
+			  <a href="javascript:loadDishes('Eastern Europe')">Eastern Europe</a>
+			  <a href="javascript:loadDishes('French')">French</a>
+			  <a href="javascript:loadDishes('Indian')">Indian</a>
+			  <a href="javascript:loadDishes('Italian')">Italian</a>
+			  <a href="javascript:loadDishes('South East Asian')">South East Asian</a>
+			</div>
+			
+			<div class="column">
+			  <a href="javascript:loadDishes('Japanese')">Japanese</a>
+			  <a href="javascript:loadDishes('Mediterranean')">Mediterranean</a>
+			  <a href="javascript:loadDishes('Mexican')">Mexican</a>
+			  <a href="javascript:loadDishes('Middle Eastern')">Middle Eastern</a>
+			  <a href="javascript:loadDishes('South American')">South American</a>
+			</div>
+			
+			<div class="column">
+			  <a href="javascript:loadDishes('Caribbean')">Caribbean</a>
+			  <a href="javascript:loadDishes('Nordic')">Nordic</a>
+			  <a href="javascript:loadDishes('Kosher')">Kosher</a>
+			</div>
+			
+		  </div>
+		</div>
+		</div>
+  
+		<div class="dropdown">
+		<button class="dropbtn">Dish Type 
+		  <i class="fa fa-caret-down"></i>
+		</button>
+		<div class="dropdown-content">  
+		  <div class="column">
+			  <a href="javascript:loadDishes('Starter')">Starter</a>
+			  <a href="javascript:loadDishes('Soup')">Soup</a>
+			  <a href="javascript:loadDishes('Sandwiches')">Sandwiches</a>
+			  <a href="javascript:loadDishes('Salad')">Salad</a>
+			  <a href="javascript:loadDishes('Preserve')">Preserve</a>
+			</div>
+			<div class="column">
+			  <a href="javascript:loadDishes('Preps')">Preps</a>
+			  <a href="javascript:loadDishes('Pancake')">Pancake</a>
+			  <a href="javascript:loadDishes('Omelet')">Omelet</a>
+			  <a href="javascript:loadDishes('Main course')">Main course</a>
+			  <a href="javascript:loadDishes('Egg')">Egg</a>
+			</div>
+			<div class="column">
+			  <a href="javascript:loadDishes('Desserts')">Desserts</a>
+			  <a href="javascript:loadDishes('Drinks')">Drinks</a>
+			  <a href="javascript:loadDishes('Condiments and sauces')">Condiments and sauces</a>
+			  <a href="javascript:loadDishes('Cereals')">Cereals</a>
+			  <a href="javascript:loadDishes('Bread')">Bread</a>
+			</div>
+			<div class="column">
+			  <a href="javascript:loadDishes('Biscuits and cookies')">Biscuits and cookies</a>
+			  <a href="javascript:loadDishes('Alcohol-cocktail')">Alcohol-cocktail</a>
+			</div>
+			
+		  </div>
+		</div>
+	
+		<div class="dropdown">
+		<button class="dropbtn">Meal Type 
+		  <i class="fa fa-caret-down"></i>
+		</button>
+		<div class="dropdown-content">  
+		  <div class="column">
+			  <a href="javascript:loadDishes('Breakfast')">Breakfast</a>
+			  <a href="javascript:loadDishes('Lunch')">Lunch</a>
+			  <a href="javascript:loadDishes('Dinner')">Dinner</a>
+			  <a href="javascript:loadDishes('Snack')">Snack</a>
+			  <a href="javascript:loadDishes('Teatime')">Teatime</a>
+			</div>
+			<div class="column">
+			</div>
+			<div class="column">
+			</div>
+			<div class="column">
+			</div>
+		  </div>
+		</div>
+	
+	
+		<div class="dropdown">
+			<button id="myBtn" class="dropbtn">Personal Recomendation
+			  <i class="fa fa-caret-down"></i>
+			</button>
+		</div>
+		<!-- The Modal -->
+		<div id="myModal" class="modal">
+		  <!-- Modal content -->
+		  <div class="modal-content">
+			<span class="close">&times;</span>
+			<div class="modal-body">
+					<div class="container">
+					  <form action="action_page.php">
+						<div class="row">
+						  <div class="col-25">
+							<label for="userGender">Sex (required):</label>
+						  </div>
+						  <div class="col-75">
+							<label class="x">
+									<input type="radio" id="userGender" name="userGender" value="Female" checked="true" onchange="show(this.value);">&nbsp;Female
+							</label>
+							<label class="x">
+									<input type="radio" id="userGender" name="userGender" value="Male" onchange="show(this.value);">&nbsp;Male
+							</label>
+						  </div>
+						</div>
+						
+						<div class="row">
+						  <div class="col-25">
+								<label for="userAge">Age:</label>      
+						  </div>
+						  <div class="col-75">
+							<input type="text" class="x" name="userAge" id="userAge">
+						  </div>
+						</div>
+						
+						<div class="row">
+						  <div class="col-25">
+							<label for="userHeight">Height:</label>                         
+						  </div>
+						  <div class="col-75">
+							<input type="text" class="x" name="userHeight" id="userHeight">
+						  </div>
+						</div>
+						
+						<div class="row">
+						  <div class="col-25">
+							<label for="userWeight">Weight:</label>                
+						  </div>
+						  <div class="col-75">
+							<input type="text" class="x" name="userWeight" id="userWeight">
+						  </div>
+						</div>
+						
+						<div class="row">
+						  <div class="col-25">
+							<label for="userActivity">Activity Level:</label>
+						  </div>
+						  <div class="col-75">
+							<select class="x" name="userActivity" id="userActivity">
+							  <option></option>
+							  <option>Sedentary</option>
+							  <option>LowActive</option>
+							  <option>Active</option>
+							  <option>VeryActive</option>
+							</select>
+						  </div>
+						</div>
+						<div id="women">
+						<div class="row">
+						  <div class="col-25">
+							<label for="pregnancy">Pregnancy:</label>          
+						  </div>
+						  <div class="col-75">
+							<input type="text" class="x" name="pregnancy" id="pregnancy">    
+						  </div>
+						</div>
+						
+						<div class="row">
+						  <div class="col-25">
+							<label for="lactation">Lactation:</label>         
+						  </div>
+						  <div class="col-75">
+							<input type="text" class="x" name="lactation" id="lactation">       
+						  </div>
+						</div>
+						</div>
+						<div class="row">
+						  <input type="submit" value="Submit">
+						</div>
+					  </form>
+					</div>					
+				</div>
+			</div>
+			</div>
+	</div>
+	
+	<div id="display-dishes" class="content"></div>
 </div>
+
 <script src="main.js"></script>
 </body>
 </html>
