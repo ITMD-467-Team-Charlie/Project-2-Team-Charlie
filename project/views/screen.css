@@ -46,15 +46,15 @@ body {
   display: none;
   position: absolute;
   background-color: #f9f9f9;
-  width: 100%;
+  width: 72%;
   height: 250px;
-  left: 0;
+  left: 270px;
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
   z-index: 1;
 }
 
 .dropdown-content {
-  background: grey;
+  background: transparent;
   font-family: Arial, Helvetica, sans-serif;
 }
 
@@ -113,13 +113,13 @@ body {
 .card {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); /* this adds the "card" effect */
   padding: 16px;
-  text-align: center;
+  text-align: left;
   background-color: #f1f1f1;
-  height: 400px;
+  /*height: 400px;*/
 }
 
 .content {
-padding: 16px;
+padding: 6px;
 }
 
 /* The Modal (background) */
@@ -215,14 +215,7 @@ input[type=submit] {
   clear: both;
 }
 
-/* Responsive columns - one column layout (vertical) on small screens */
-@media screen and (max-width: 600px) {
-  .col {
-    width: 100%;
-    display: block;
-    margin-bottom: 20px;
-  }
-}
+
 
 /* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
 @media screen and (max-width: 600px) {
@@ -238,4 +231,131 @@ input[type=submit] {
     width: 100%;
     margin-top: 0;
   }
+}
+
+/* The sidebar menu */
+.sidenav {
+  font-family: Arial, Helvetica, sans-serif;
+  height: 100%; /* Full-height: remove this if you want "auto" height */
+  width: 270px; /* Set the width of the sidebar */
+  position: fixed; /* Fixed Sidebar (stay in place on scroll) */
+  z-index: 1; /* Stay on top */
+  top: 0; /* Stay at the top */
+  left: 0;
+  background-color: #333; /* Black */
+  overflow-x: hidden; /* Disable horizontal scroll */
+  padding-top: 150px;
+  color: white;
+  padding-left: 30px;
+}
+
+/* The navigation menu links */
+.sidenav a {
+  padding: 6px 8px 6px 16px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+}
+
+/* When you mouse over the navigation links, change their color */
+.sidenav a:hover {
+  color: #f1f1f1;
+}
+
+/* Style page content */
+.main {
+  margin-left: 270px; /* Same as the width of the sidebar */
+  padding: 0px 0px;
+}
+
+.card-left{
+	text-align: left;
+}
+/* On smaller screens, where height is less than 450px, change the style of the sidebar (less padding and a smaller font size) */
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+
+/* Responsive columns - one column layout (vertical) on small screens */
+@media screen and (max-width: 1300px) {
+  .col {
+    width: 100%;
+    display: block;
+    margin-bottom: 5px;
+  }
+}
+
+@media screen and (min-width: 1300px) {
+  .col {
+    width: 50%;
+    display: block;
+    margin-bottom: 5px;
+  }
+}
+/* inside the card */
+.card-col {
+  float: left;
+  width: 50%;
+}
+
+/* Clear floats after the columns */
+.card-row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Responsive layout - when the screen is less than 600px wide, make the three columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 1000px) {
+  .card-col {
+    width: 100%;
+  }
+}
+
+.slidecontainer {
+  width: 90%;
+}
+
+.slider {
+  -webkit-appearance: none;
+  width: 100%;
+  height: 5px;
+  background: #d3d3d3;
+  outline: none;
+  opacity: 0.7;
+  -webkit-transition: .2s;
+  transition: opacity .2s;
+}
+
+.slider:hover {
+  opacity: 1;
+}
+
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 10px;
+  height: 25px;
+  background: red;
+  cursor: pointer;
+}
+
+.slider::-moz-range-thumb {
+  width: 10px;
+  height: 25px;
+  background: red;
+  cursor: pointer;
+}
+
+.block {
+  display: block;
+  width: 90%;
+  border: none;
+  background-color: #4CAF50;
+  padding: 14px 28px;
+  font-size: 16px;
+  cursor: pointer;
+  text-align: center;
 }
