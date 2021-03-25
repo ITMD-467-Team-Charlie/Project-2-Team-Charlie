@@ -1,4 +1,4 @@
-# __1.0.0-aplha__
+# __v1.0.0-alpha__
 
 ### [Alpha Release] - Thu, 25 Mar 2021
 
