@@ -124,6 +124,11 @@ maxIng.oninput = function() {
   output3.innerHTML = this.value;
 }
 
-document.getElementById("filter").addEventListener("click", function() {
-	loadDishes(searchString);
-});
+//retrives the oncall element's data and passes it to Sharath's api interpreter 
+function FoodlistRetrieval(clickeditem) {
+	
+	loadDishes(clickeditem);
+}
+
+
+
