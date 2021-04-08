@@ -1,0 +1,207 @@
+doctype html
+html(lang='en')
+  head
+    title Food Guide
+    meta(charset='utf-8')
+    meta(name='viewport' content='width=device-width, initial-scale=1')
+    link(rel='stylesheet' href='/stylesheets/screen.css')
+    script(src="/Javascript/jquery-3.6.0.min.js")
+    script(src='/Javascript/main.js')
+  body
+    // Side navigation
+    .sidenav
+      h3  Min. Calories
+      .slidecontainer
+        input#minCal.slider(type='range' min='0' max='10000' value='0' step='100')
+        p Value: 
+          span#demo1
+      h3  Max. Calories
+      .slidecontainer
+        input#maxCal.slider(type='range' min='0' max='10000' value='10000' step='100')
+        p Value: 
+          span#demo2
+      h3  Max. Ingredients
+      .slidecontainer
+        input#maxIngredients.slider(type='range' min='0' max='50' value='25' step='5')
+        p Value: 
+          span#demo3
+      button#filter.block(type='button') Submit
+    // Page content
+    .main
+      .navbar
+        a(href='#home') Home
+        .dropdown
+          <button class="dropbtn">Health
+            <i class="fa fa-caret-down"></i>
+          </button>
+          <div class="dropdown-content">  
+            .column
+              <a id="info" data-id="alcohol-free" onclick="FoodlistRetrieval(this.getAttribute('data-id'))"> Alcohol-free </a>
+              <a id="info" data-id="immune-supportive" onclick="FoodlistRetrieval(this.getAttribute('data-id'))">Immune-Supportive</a>
+              <a id="info" data-id="celery-free" onclick="FoodlistRetrieval(this.getAttribute('data-id'))">Celery-free</a>
+              <a id="info" data-id="crustcean-free" onclick="FoodlistRetrieval(this.getAttribute('data-id'))">Crustcean-free</a>
+              <a id="info" data-id="dairy-free" onclick="FoodlistRetrieval(this.getAttribute('data-id'))">Dairy-free</a>
+            .column
+              <a id="info" data-id="eggs-free" onclick="FoodlistRetrieval(this.getAttribute('data-id'))">Eggs-free</a>
+              <a id="info" data-id="fish-free" onclick="FoodlistRetrieval(this.getAttribute('data-id'))">Fish-free</a>
+              <a id="info" data-id="fodmap-free" onclick="FoodlistRetrieval(this.getAttribute('data-id'))">FODMAP free</a>
+              <a id="info" data-id="gluten-free" onclick="FoodlistRetrieval(this.getAttribute('data-id'))">Gluten free</a>
+              <a id="info" data-id="keto-friendly" onclick="FoodlistRetrieval(this.getAttribute('data-id'))">Keto Friendly</a>
+            .column
+              <a id="info" data-id="kidney-friendly" onclick="FoodlistRetrieval(this.getAttribute('data-id'))">Kidney friendly</a>
+              <a id="info" data-id="kosher" onclick="FoodlistRetrieval(this.getAttribute('data-id'))">Kosher</a>
+              <a id="info" data-id="low-potassium" onclick="FoodlistRetrieval(this.getAttribute('data-id'))">Low potassium</a>
+              <a id="info" data-id="lupine-free" onclick="FoodlistRetrieval(this.getAttribute('data-id'))">Lupine-free</a>
+              <a id="info" data-id="mustard-free" onclick="FoodlistRetrieval(this.getAttribute('data-id'))">Mustard-free</a>
+            .column
+              <a id="info" data-id="no-oil-added" onclick="FoodlistRetrieval(this.getAttribute('data-id'))">No oil added</a>
+              <a id="info" data-id="low-sugar" onclick="FoodlistRetrieval(this.getAttribute('data-id'))">No-sugar</a>
+              <a id="info" data-id="paleo" onclick="FoodlistRetrieval(this.getAttribute('data-id'))">Paleo</a>
+              <a id="info" data-id="vegetarian" onclick="FoodlistRetrieval(this.getAttribute('data-id'))">Vegetarian</a>
+              <a id="info" data-id="vegan" onclick="FoodlistRetrieval(this.getAttribute('data-id'))">Vegan</a>
+          </div>
+        .dropdown
+          button.dropbtn
+            | Diet
+            i.fa.fa-caret-down
+          .dropdown-content
+            .column
+              <a id="info" data-id="balanced" onclick="FoodlistRetrieval(this.getAttribute('data-id'))">Balanced</a>
+              <a id="info" data-id="high-fiber" onclick="FoodlistRetrieval(this.getAttribute('data-id'))">High-Fiber</a>
+              <a id="info" data-id="high-protein" onclick="FoodlistRetrieval(this.getAttribute('data-id'))">High-Protein</a>
+              <a id="info" data-id="low-carb" onclick="FoodlistRetrieval(this.getAttribute('data-id'))">Low-Carb</a>
+              <a id="info" data-id="low-fat" onclick="FoodlistRetrieval(this.getAttribute('data-id'))">Low-Fat</a>
+            .column
+              <a id="info" data-id="low-sodium" onclick="FoodlistRetrieval(this.getAttribute('data-id'))">Low-Sodium</a>
+            .column
+            .column
+        .dropdown
+          button.dropbtn
+            | Cuisine Type
+            i.fa.fa-caret-down
+          .dropdown-content
+            .rowN
+              .column
+                <a id="info" data-id="American" onclick="FoodlistRetrieval(this.getAttribute('data-id'))">American</a>
+                <a id="info" data-id="Asian" onclick="FoodlistRetrieval(this.getAttribute('data-id'))">Asian</a>
+                <a id="info" data-id="British" onclick="FoodlistRetrieval(this.getAttribute('data-id'))">British</a>
+                <a id="info" data-id="Central Europe" onclick="FoodlistRetrieval(this.getAttribute('data-id'))">Central Europe</a>
+                <a id="info" data-id="Chinese" onclick="FoodlistRetrieval(this.getAttribute('data-id'))">Chinese</a>
+              .column
+                <a id="info" data-id="Eastern Europe" onclick="FoodlistRetrieval(this.getAttribute('data-id'))">Eastern Europe</a>
+                <a id="info" data-id="French" onclick="FoodlistRetrieval(this.getAttribute('data-id'))">French</a>
+                <a id="info" data-id="Indian" onclick="FoodlistRetrieval(this.getAttribute('data-id'))">Indian</a>
+                <a id="info" data-id="Italian" onclick="FoodlistRetrieval(this.getAttribute('data-id'))">Italian</a>
+                <a id="info" data-id="South East Asian" onclick="FoodlistRetrieval(this.getAttribute('data-id'))">South East Asian</a>
+              .column
+                <a id="info" data-id="Japanese" onclick="FoodlistRetrieval(this.getAttribute('data-id'))">Japanese</a>
+                <a id="info" data-id="Mediterranean" onclick="FoodlistRetrieval(this.getAttribute('data-id'))">Mediterranean</a>
+                <a id="info" data-id="Mexican" onclick="FoodlistRetrieval(this.getAttribute('data-id'))">Mexican</a>
+                <a id="info" data-id="Middle Eastern" onclick="FoodlistRetrieval(this.getAttribute('data-id'))">Middle Eastern</a>
+                <a id="info" data-id="South American" onclick="FoodlistRetrieval(this.getAttribute('data-id'))">South American</a>
+              .column
+                <a id="info" data-id="Caribbean" onclick="FoodlistRetrieval(this.getAttribute('data-id'))">Caribbean</a>
+                <a id="info" data-id="Nordic" onclick="FoodlistRetrieval(this.getAttribute('data-id'))">Nordic</a>
+                <a id="info" data-id="Kosher" onclick="FoodlistRetrieval(this.getAttribute('data-id'))">Kosher</a>
+        .dropdown
+          button.dropbtn
+            | Dish Type
+            i.fa.fa-caret-down
+          .dropdown-content
+            .column
+              <a id="info" data-id="Starter" onclick="FoodlistRetrieval(this.getAttribute('data-id'))">Starter</a>
+              <a id="info" data-id="Soup" onclick="FoodlistRetrieval(this.getAttribute('data-id'))">Soup</a>
+              <a id="info" data-id="Sandwiches" onclick="FoodlistRetrieval(this.getAttribute('data-id'))">Sandwiches</a>
+              <a id="info" data-id="Salad" onclick="FoodlistRetrieval(this.getAttribute('data-id'))">Salad</a>
+              <a id="info" data-id="Preserve" onclick="FoodlistRetrieval(this.getAttribute('data-id'))">Preserve</a>
+            .column
+              <a id="info" data-id="Preps" onclick="FoodlistRetrieval(this.getAttribute('data-id'))">Preps</a>
+              <a id="info" data-id="Pancake" onclick="FoodlistRetrieval(this.getAttribute('data-id'))">Pancake</a>
+              <a id="info" data-id="Omelet" onclick="FoodlistRetrieval(this.getAttribute('data-id'))">Omelet</a>
+              <a id="info" data-id="Main course" onclick="FoodlistRetrieval(this.getAttribute('data-id'))">Main course</a>
+              <a id="info" data-id="Egg" onclick="FoodlistRetrieval(this.getAttribute('data-id'))">Egg</a>
+            .column
+              <a id="info" data-id="Desserts" onclick="FoodlistRetrieval(this.getAttribute('data-id'))">Desserts</a>
+              <a id="info" data-id="Drinks" onclick="FoodlistRetrieval(this.getAttribute('data-id'))">Drinks</a>
+              <a id="info" data-id="Condiments and sauces" onclick="FoodlistRetrieval(this.getAttribute('data-id'))">Condiments and sauces</a>
+              <a id="info" data-id="Cereals" onclick="FoodlistRetrieval(this.getAttribute('data-id'))">Cereals</a>
+              <a id="info" data-id="Bread" onclick="FoodlistRetrieval(this.getAttribute('data-id'))">Bread</a>
+            .column
+            <a id="info" data-id="Biscuits and cookies" onclick="FoodlistRetrieval(this.getAttribute('data-id'))">Biscuits and cookies</a>
+            <a id="info" data-id="Alcohol-cocktail" onclick="FoodlistRetrieval(this.getAttribute('data-id'))">Alcohol-cocktail</a>
+        .dropdown
+          button.dropbtn
+            | Meal Type
+            i.fa.fa-caret-down
+          .dropdown-content
+            .column
+              <a id="info" data-id="Breakfast" onclick="FoodlistRetrieval(this.getAttribute('data-id'))">Breakfast</a>
+              <a id="info" data-id="Lunch" onclick="FoodlistRetrieval(this.getAttribute('data-id'))">Lunch</a>
+              <a id="info" data-id="Dinner" onclick="FoodlistRetrieval(this.getAttribute('data-id'))">Dinner</a>
+              <a id="info" data-id="Snack" onclick="FoodlistRetrieval(this.getAttribute('data-id'))">Snack</a>
+              <a id="info" data-id="Teatime" onclick="FoodlistRetrieval(this.getAttribute('data-id'))">Teatime</a>
+            .column
+            .column
+            .column
+        .dropdown
+          button#myBtn.dropbtn
+            | Personal Recomendation
+            i.fa.fa-caret-down
+        // The Modal
+        #myModal.modal
+          // Modal content
+          .modal-content
+            span.close &times;
+            .modal-body
+              .container
+                form(action='action_page.php')
+                  .row
+                    .col-25
+                      label(for='userGender') Sex (required):
+                    .col-75
+                      label.x
+                        input#userGender(type='radio' name='userGender' value='Female' checked='true' onchange='show(this.value);')
+                        | &nbsp;Female
+                      label.x
+                        input#userGender(type='radio' name='userGender' value='Male' onchange='show(this.value);')
+                        | &nbsp;Male
+                  .row
+                    .col-25
+                      label(for='userAge') Age:
+                    .col-75
+                      input#userAge.x(type='text' name='userAge')
+                  .row
+                    .col-25
+                      label(for='userHeight') Height:
+                    .col-75
+                      input#userHeight.x(type='text' name='userHeight')
+                  .row
+                    .col-25
+                      label(for='userWeight') Weight:
+                    .col-75
+                      input#userWeight.x(type='text' name='userWeight')
+                  .row
+                    .col-25
+                      label(for='userActivity') Activity Level:
+                    .col-75
+                      select#userActivity.x(name='userActivity')
+                        option
+                        option Sedentary
+                        option LowActive
+                        option Active
+                        option VeryActive
+                  #women
+                    .row
+                      .col-25
+                        label(for='pregnancy') Pregnancy:
+                      .col-75
+                        input#pregnancy.x(type='text' name='pregnancy')
+                    .row
+                      .col-25
+                        label(for='lactation') Lactation:
+                      .col-75
+                        input#lactation.x(type='text' name='lactation')
+                  .row
+                    input(type='submit' value='Submit')
+      #display-dishes.content
+  
