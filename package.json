@@ -4,7 +4,8 @@
   "description": "–  Have you always had a problem trying to find the right diet plan for you?  The certain foods you eat can have big effects on your health and quality of life.  Although eating healthy can be fairly simple, the rise in popular “diets” and dieting trends has caused confusion.  In fact, these trends often distract from the basic nutrition principles that are most important.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "doc": "jsdoc -c jsdoc.json"
   },
   "repository": {
     "type": "git",
@@ -15,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/ITMD-467-Team-Charlie/Project-2-Team-Charlie/issues"
   },
-  "homepage": "https://github.com/ITMD-467-Team-Charlie/Project-2-Team-Charlie#readme"
+  "homepage": "https://github.com/ITMD-467-Team-Charlie/Project-2-Team-Charlie#readme",
+  "devDependencies": {
+    "jsdoc": "^3.6.6"
+  }
 }
