@@ -19,11 +19,8 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-//Route Prefixes
-app.get('/', function(req, res) {
-    res.sendFile(path.join(__dirname + '/views/home.html'));
-});
-app.use('/home', indexRouter);
+
+app.use('/', indexRouter);
 app.use('/users', usersRouter);
 //app.use('/v1', apiV1Router);
 
