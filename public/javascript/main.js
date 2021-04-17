@@ -35,7 +35,7 @@ function show(val){
 }
 
 const loadDishes = (userInput) => {
-	
+	document.getElementById("mySidenav").style.width = "0";
 	searchString = userInput;
 	var cal = minCal.value+"-"+maxCal.value;
 	var ing = maxIng.value;
@@ -51,37 +51,44 @@ const loadDishes = (userInput) => {
 	if(dishes.hits.length>0){
 		document.getElementById('display-dishes').innerHTML="";
 	}
-	
+	var dishCard='';
+	var html = '';
     for (let dish of dishes.hits) {
-		var dishCard='';
+		
 		var ingredientLines = makeUL(dish.recipe.ingredientLines);
-		var calories = (dish.recipe.calories/dish.recipe.yield).toFixed(2);
-		var totalWeight = (dish.recipe.totalWeight).toFixed(2);
+		var calories = (dish.recipe.calories/dish.recipe.yield).toFixed(0);
 		dishCard = `
-            <div class="col">
-                <div class="card">
-					<div class="card-row">
-						<h2>${dish.recipe.label}</h2>
-					</div>
-					<div class="card-row">
-						<div class="card-col">
-							<img id="dishImg" src="${dish.recipe.image}"/>
-						</div>
-					
-						<div class="card-col">
-							${ingredientLines};
-						</div>
-					</div>
-					<div class="card-row">
-						<p>Calories: ${calories}</p>
-						<p>Total Weight: ${totalWeight} </p>
-					</div>
-                </div>
-				
-            </div>
+            <div class="search-column">
+				<div class="card">
+				  <img src="${dish.recipe.image}" alt="${dish.recipe.label}" class="card-image" onerror="this.src='/images/noimage.png'">
+				  <div class="search-container">
+					<div class="title">${dish.recipe.label}</div>
+					<table>
+					<t>
+					<tr>
+						<th>${calories}</th> 
+						<th>${dish.recipe.ingredients.length}</th> 
+						<th>${dish.recipe.yield}</th> 
+					</tr>
+					<tr>
+						<td>
+							Calories
+						</td>
+						<td>
+							Ingredients
+						</td>
+						<td>
+							Serves
+						</td>
+					</tr>
+					</table>
+				  </div>
+				</div>
+			</div>
         `
-        document.getElementById('display-dishes').innerHTML += dishCard;
+		html += dishCard;
     }
+	document.getElementById('display-dishes').innerHTML = html;
 }
 
 function makeUL(array) {
@@ -137,3 +144,10 @@ document.getElementById("filter").addEventListener("click", function() {
 	loadDishes(searchString);
 });
 
+document.getElementById("ham-open").addEventListener("click", function() {
+  document.getElementById("mySidenav").style.width = "250px";
+});
+
+document.getElementById("ham-close").addEventListener("click", function() {
+  document.getElementById("mySidenav").style.width = "0";
+});
