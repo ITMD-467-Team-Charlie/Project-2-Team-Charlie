@@ -102,6 +102,15 @@ function makeUL(array) {
 		return list.outerHTML;
 }
 
+//adds event listner to a tags to pass attribute to loadDish function
+[].forEach.call(document.getElementsByTagName("a"),function(el){
+	el.addEventListener("click",function(e){
+		if(el.getAttribute('data-id')!=null){
+			loadDishes(el.getAttribute('data-id'));
+		}
+	});
+});
+
 var minCal = document.getElementById("minCal");
 var maxCal = document.getElementById("maxCal");
 var maxIng = document.getElementById("maxIngredients");
@@ -124,11 +133,7 @@ maxIng.oninput = function() {
   output3.innerHTML = this.value;
 }
 
-//retrives the oncall element's data and passes it to Sharath's api interpreter 
-function FoodlistRetrieval(clickeditem) {
-	
-	loadDishes(clickeditem);
-}
-
-
+document.getElementById("filter").addEventListener("click", function() {
+	loadDishes(searchString);
+});
 
