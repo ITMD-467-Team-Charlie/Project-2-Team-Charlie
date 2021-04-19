@@ -102,6 +102,15 @@ function makeUL(array) {
 		return list.outerHTML;
 }
 
+//adds event listner to a tags to pass attribute to loadDish function
+[].forEach.call(document.getElementsByTagName("a"),function(el){
+	el.addEventListener("click",function(e){
+		if(el.getAttribute('data-id')!=null){
+			loadDishes(el.getAttribute('data-id'));
+		}
+	});
+});
+
 var minCal = document.getElementById("minCal");
 var maxCal = document.getElementById("maxCal");
 var maxIng = document.getElementById("maxIngredients");
@@ -127,3 +136,4 @@ maxIng.oninput = function() {
 document.getElementById("filter").addEventListener("click", function() {
 	loadDishes(searchString);
 });
+
