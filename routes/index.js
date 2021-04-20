@@ -3,6 +3,16 @@ var router = express.Router();
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
+  let usercookie = req.cookies['user'];
+ 
+  if (usercookie == null) { //Executes if variable is null OR undefined
+    
+    res.cookie('user', 'test', {
+      maxAge: 86400 * 1000, // 24 hours
+    });
+  }else{
+    console.log('hi4');
+  }
   res.render('home', { title: 'Nutrition Guide : Team Charlie Project' });
 });
 
