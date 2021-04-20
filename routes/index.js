@@ -11,7 +11,7 @@ router.get('/', function(req, res, next) {
       maxAge: 86400 * 1000, // 24 hours
     });
   }else{
-    console.log('hi4');
+    // do something else
   }
   res.render('home', { title: 'Nutrition Guide : Team Charlie Project' });
 });
