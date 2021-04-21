@@ -3,7 +3,17 @@ var router = express.Router();
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Nutrition Guide : Team Charlie Project' });
+  let usercookie = req.cookies['user'];
+ 
+  if (usercookie == null) { //Executes if variable is null OR undefined
+    
+    res.cookie('user', 'test', {
+      maxAge: 86400 * 1000, // 24 hours
+    });
+  }else{
+    // do something else
+  }
+  res.render('home', { title: 'Nutrition Guide : Team Charlie Project' });
 });
 
 module.exports = router;
