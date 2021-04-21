@@ -1,7 +1,7 @@
 {
     "source" : {
         "include": ["./app.js", "./routes"],
-        "includePattern":".$",
+        "includePattern":".+\\.js(doc|x)?$",
         "excludePattern" :"(node_modules/docs)"
     },
     "plugins":["plugins/markdown"],
@@ -11,6 +11,9 @@
     },
     "opts" : {
         "recurse": true,
-        "destination": "./docs/"
+        "destination": "./docs/",
+        "readme": "./readme.md",
+        "encoding": "utf8",
+        "verbose": true
     }
 }
