@@ -1,6 +1,6 @@
 {
     "source" : {
-        "include": ["./bin"],
+        "include": ["./app.js", "./routes"],
         "includePattern":".$",
         "excludePattern" :"(node_modules/docs)"
     },
