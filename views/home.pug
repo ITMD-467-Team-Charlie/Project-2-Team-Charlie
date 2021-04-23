@@ -5,6 +5,9 @@ head
   meta(name='viewport' content='width=device-width, initial-scale=1')
   link(rel='stylesheet' href='/stylesheets/screen.css')
   link(rel='stylesheet' href='/stylesheets/search-box.css')
+  link(rel='stylesheet' href='/stylesheets/dishdetails.css')
+  link(rel='stylesheet' href='/stylesheets/chart.css')
+  script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js')
 // Side navigation
 #mySidenav.sidenav
   .sidenav-close
@@ -210,4 +213,16 @@ head
               .row
                 input(type='submit' value='Submit')
   #display-dishes.search-content
+  // The Modal
+  #details-model.details-modal
+    // Modal content
+    .details-modal-content
+      span.details-close &times;
+      .row-details
+        #ingredientLines.col-5.menu-details
+        #digest.col-5.table-details
+      .row-details
+        #tags.col-11.labels
+        #cautions.col-11.labels.red
 script(src='/javascript/main.js')
+script(src='/javascript/lazy.js')

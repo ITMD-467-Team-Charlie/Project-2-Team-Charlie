@@ -5,6 +5,7 @@
 
 body {
   margin: 0;
+  background-color: #272b34;
 }
 
 /* NAV START */
@@ -54,7 +55,7 @@ body {
 
 .dropdown-content {
   background: transparent;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: sans-serif, Arial, Helvetica;
 }
 
 .dropdown:hover .dropdown-content {
@@ -66,7 +67,7 @@ body {
   float: left;
   padding: 10px 0px 10px;
   background-color: #ccc;
-  height: 250px;
+  height: 210px;
 }
 
 .column a {
@@ -76,6 +77,16 @@ body {
   display: block;
   text-align: left;
   cursor: pointer;
+   font-family: sans-serif;
+    font-size: 15px;
+    font-weight: 300;
+    color: rgba(0, 0, 0, 1);
+    text-transform: none;
+    text-decoration: none;
+    letter-spacing: .5px;
+    word-spacing: .5px;
+    overflow: hidden;
+    padding-bottom: 9px;
 }
 
 .column a:hover {
