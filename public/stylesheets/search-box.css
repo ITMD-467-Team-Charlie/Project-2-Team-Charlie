@@ -32,6 +32,13 @@
   padding: 0 5px;
 }
 
+.search-content {
+    width: 66.5%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 10px;
+}
+
 .search-container::after, .search-content::after {
   content: "";
   clear: both;
