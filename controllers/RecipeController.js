@@ -3,9 +3,10 @@ const httpreq = require("request");
 const { endpoint, key, id } = require('../utils/config');
 
 /**
- * RecipeController.
- * 
- * @returns {Object}
+ * Fetch list of recipes from the configured external service as API.
+ * @param req Request object
+ * @param res Response object
+ * @returns {Object} JSON
  */
 exports.recipeList = function(req, res) {
 
@@ -37,6 +38,13 @@ exports.recipeList = function(req, res) {
 
 };
 
+/**
+ * Fetch list of recipes from the configured external service as PAGE
+ * @param req Request object
+ * @param res Response object
+ * @param Obj profileData User profile from session.
+ * @returns {Object} HTML
+ */
 exports.recipeListPage = function(req, res, profileData) {
 
     try {
@@ -67,6 +75,11 @@ exports.recipeListPage = function(req, res, profileData) {
 
 };
 
+/**
+ * Function to re process the service json out put with calcualted percentages 
+ * @param {Object} JSON List of dishes.
+ * @returns  {Object} JSON processed with new attributes.
+ */
 function enrichJson(dishes) {
 
     for (let dish of dishes) {
