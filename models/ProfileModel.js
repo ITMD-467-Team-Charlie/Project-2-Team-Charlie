@@ -17,7 +17,11 @@ var UserProfile = new mongoose.Schema({
     ccarbs: { type: Number, required: true },
     cprotons: { type: Number, required: true },
     cfats: { type: Number, required: true },
-    ratio: { type: String, required: true }
+    ratio: { type: String, required: true },
+    recipes: [{
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "Recipe"
+    }]
 }, { timestamps: true });
 
 
