@@ -4,13 +4,11 @@ var router = express.Router();
 /**
  * 
  */
-router.get('/', function (req, res, next) {
+router.get('/', function(req, res, next) {
     let usercookie = req.cookies.user;
 
     if (usercookie == null) { // Executes if variable is null OR undefined
-        res.cookie('user', 'test', {
-            maxAge: 86400 * 1000 // 24 hours
-        });
+        // do something
     } else {
         // do something else
     }
