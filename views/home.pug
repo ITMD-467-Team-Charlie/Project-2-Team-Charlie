@@ -152,67 +152,47 @@ head
         .column
         .column
         .column
-    .dropdown
-      button#myBtn.dropbtn
-        | Personal Recomendation
-        i.fa.fa-caret-down
-    // The Modal
-    #myModal.modal
-      // Modal content
-      .modal-content
-        span.close &times;
-        .modal-body
-          .modalcontainer
-            form(action='action_page.php')
-              .row
-                .col-25
-                  label(for='userGender') Sex (required):
-                .col-75
-                  label.x
-                    input#userGender(type='radio' name='userGender' value='Female' checked='true' onchange='show(this.value);')
-                    | &nbsp;Female
-                  label.x
-                    input#userGender(type='radio' name='userGender' value='Male' onchange='show(this.value);')
-                    | &nbsp;Male
-              .row
-                .col-25
-                  label(for='userAge') Age:
-                .col-75
-                  input#userAge.x(type='text' name='userAge')
-              .row
-                .col-25
-                  label(for='userHeight') Height:
-                .col-75
-                  input#userHeight.x(type='text' name='userHeight')
-              .row
-                .col-25
-                  label(for='userWeight') Weight:
-                .col-75
-                  input#userWeight.x(type='text' name='userWeight')
-              .row
-                .col-25
-                  label(for='userActivity') Activity Level:
-                .col-75
-                  select#userActivity.x(name='userActivity')
-                    option
-                    option Sedentary
-                    option LowActive
-                    option Active
-                    option VeryActive
-              #women
-                .row
-                  .col-25
-                    label(for='pregnancy') Pregnancy:
-                  .col-75
-                    input#pregnancy.x(type='text' name='pregnancy')
-                .row
-                  .col-25
-                    label(for='lactation') Lactation:
-                  .col-75
-                    input#lactation.x(type='text' name='lactation')
-              .row
-                input(type='submit' value='Submit')
   #display-dishes.search-content
+    for dish in dishes
+      .search-column
+        a#dish(data-dish=dish.id onclick="getDishDetails(this.getAttribute('data-dish'));")
+          .card
+            img.card-image(src=dish.recipe.image alt=dish.recipe.label onerror="this.src='/images/noimage.png'")
+            .search-container
+              .title #{dish.recipe.label}
+              .card-nutrients
+                table
+                  tr
+                    th
+                    th Total
+                    th Unit
+                  tr
+                    td Fat
+                    td #{dish.fat}
+                    td g
+                  tr
+                    td Carbs
+                    td #{dish.carb}
+                    td g
+                  tr
+                    td Protein
+                    td #{dish.protein}
+                    td g
+                  tr
+                    td Calories
+                    td #{(dish.recipe.calories).toFixed(0)}
+                    td kcal
+                figure
+                  .graphic
+                    .row-chart
+                      .chart
+                        span.block-chart(title='Fat' style='width:'+dish.fatr+'%;')
+                          span.value #{dish.fatr}%
+                        span.block-chart(title='Carbs' style='width:'+dish.carbr+'%;')
+                          span.value #{dish.carbr}%
+                        span.block-chart(title='Protine' style='width:'+dish.protiner+'%;')
+                          span.value #{dish.protiner}%
+
   // The Modal
   #details-model.details-modal
     // Modal content
