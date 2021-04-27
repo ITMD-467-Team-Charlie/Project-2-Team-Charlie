@@ -1,12 +1,23 @@
 {
-  "name": "NutritionGuide",
-  "version": "1.0.0-alpha",
-  "private": true,
+  "name": "project-2-team-charlie",
+  "version": "1.0.0",
+  "description": "–  Have you always had a problem trying to find the right diet plan for you?  The certain foods you eat can have big effects on your health and quality of life.  Although eating healthy can be fairly simple, the rise in popular “diets” and dieting trends has caused confusion.  In fact, these trends often distract from the basic nutrition principles that are most important.",
+  "main": "index.js",
   "scripts": {
+<<<<<<< Updated upstream
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ITMD-467-Team-Charlie/Project-2-Team-Charlie.git"
+=======
     "start": "node ./bin/www",
     "docs": "./node_modules/.bin/jsdoc -c jsdoc.json",
     "dev-start": "DEBUG=project:* npm start",
-    "dev": "nodemon ./bin/www"
+    "dev": "nodemon ./bin/www",
+    "lint": "eslint . --config=.eslintrc.js",
+    "lint-fix": "eslint . --config=.eslintrc.js --fix"
+
   },
   "dependencies": {
     "cookie-parser": "~1.4.4",
@@ -26,14 +37,19 @@
   },
   "main": "app.js",
   "devDependencies": {
-    "nodemon": "^2.0.7",
-    "eslint": "^7.23.0",
+    "eslint": "^7.25.0",
+    "eslint-config-airbnb-base": "^14.2.1",
     "eslint-config-standard": "^16.0.2",
     "eslint-plugin-import": "^2.22.1",
     "eslint-plugin-node": "^11.1.0",
-    "eslint-plugin-promise": "^4.3.1"
+    "eslint-plugin-promise": "^4.3.1",
+    "nodemon": "^2.0.7"
+>>>>>>> Stashed changes
   },
   "author": "",
   "license": "ISC",
-  "description": ""
+  "bugs": {
+    "url": "https://github.com/ITMD-467-Team-Charlie/Project-2-Team-Charlie/issues"
+  },
+  "homepage": "https://github.com/ITMD-467-Team-Charlie/Project-2-Team-Charlie#readme"
 }
