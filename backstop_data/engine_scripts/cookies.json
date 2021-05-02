@@ -1,0 +1,14 @@
+[
+  {
+    "domain": "localhost",
+    "path": "/",
+    "name": "profile",
+    "value": "j%3A%22608b07244ab72b24d9119c1b%22",
+    "expirationDate": 1798790400,
+    "hostOnly": false,
+    "httpOnly": false,
+    "secure": false,
+    "session": false,
+    "sameSite": "no_restriction"
+  }
+]
