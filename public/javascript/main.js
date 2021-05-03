@@ -95,7 +95,14 @@ window.onclick = function(event) {
 };
 
 function getDishDetails(id) {
-    var fetched_json = sessionStorage.getItem(id);
+    $.post('/addrecepie', {
+            rid: id
+        },
+        function(data, status) {
+            console.log("Data: " + data + "\nStatus: " + status);
+        });
+
+    /**var fetched_json = sessionStorage.getItem(id);
     var obj = JSON.parse(fetched_json);
     var nutrients = '';
 
@@ -110,5 +117,5 @@ function getDishDetails(id) {
     document.getElementById('digest').innerHTML = "<div class='details-title'>Nutrients</div><table><tr><th></th><th>Total</th><th>Daily</th></tr>" + nutrients + '</table>';
     document.getElementById('ingredientLines').innerHTML = "<div class='details-title'>Ingredients</div>" + makeUL(obj.ingredientLines, 'ing');
     document.getElementById('cautions').innerHTML = "<div class='details-title'>Cautions</div>" + makeUL(obj.cautions, 'cau');
-    document.getElementById('details-model').style.display = 'block';
+    document.getElementById('details-model').style.display = 'block';**/
 }
