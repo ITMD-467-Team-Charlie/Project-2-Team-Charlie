@@ -1,6 +1,6 @@
 {
   "name": "nutritionguide",
-  "version": "1.0.0-alpha",
+  "version": "1.0.0-beta",
   "description": "## Sean Reimer, Maksym Melnyk, Sainath Reddy, Sharath Manchikatla, Arthur Arreguin ## 2/25/2021",
   "private": true,
   "scripts": {
@@ -8,9 +8,7 @@
     "docs": "jsdoc -c jsdoc.json",
     "dev-start": "DEBUG=project:* npm start",
     "dev": "nodemon ./bin/www",
-	"tester": "NODE_ENV=tester mocha"
-    "approve": "backstop approve",
-    "test": "backstop test",
+    "test": "mocha",
     "lint": "eslint . --config=.eslintrc.js",
     "lint-fix": "eslint . --config=.eslintrc.js --fix",
     "bk-approve": "backstop approve",
@@ -41,15 +39,13 @@
   },
   "main": "app.js",
   "devDependencies": {
-    "mocha": "^8.3.2",
-    "nodemon": "^2.0.7",
-    "eslint": "^7.23.0",
     "eslint": "^7.25.0",
     "eslint-config-airbnb-base": "^14.2.1",
     "eslint-config-standard": "^16.0.2",
     "eslint-plugin-import": "^2.22.1",
     "eslint-plugin-node": "^11.1.0",
     "eslint-plugin-promise": "^4.3.1",
+    "mocha": "^8.3.2",
     "nodemon": "^2.0.7"
   },
   "author": "",
