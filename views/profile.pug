@@ -1,0 +1,92 @@
+doctype html
+head
+  meta(charset='UTF-8')
+  meta(http-equiv='X-UA-Compatible' content='IE=edge')
+  meta(name='viewport' content='width=device-width, initial-scale=1.0')
+  title Nutrition Profile
+  link(rel='stylesheet' href='/stylesheets/profile.css')
+#container.container
+  .overlay-container
+    .overlay
+      .overlay-panel.overlay-right
+        if result
+          div
+            span #{user.name}, your BMI is #{user.bmi}.
+            span
+              | Since your weight puts you in the #{user.status} category, your goal should be #{user.goal}, with a macro ratio of #{user.ratio}.
+            br
+            br
+            strong CARBS:
+            span #{user.carbs} g per day (#{user.ccarbs} calories)
+            br
+            strong PROTEIN:
+            span #{user.protons} g per day (#{user.cprotons} calories)
+            br
+            strong FATS:
+            span #{user.fats} g per day (#{user.cfats} calories)
+            br
+            strong TOTAL CALORIES: #{user.calories}
+            form(action='/find' method='POST')
+              button(type='submit') Save Profile &amp; Find Dishes
+        else
+          h1 Hello, Friend!
+          p
+            | Enter your details and start a healthy journey with us. Find your macronutrient ratio for flexible dieting. Build a meal plan around your ideal ratio of proteins, carbs, and fats!
+  .form-container.sign-in-container
+    form(action='/calculate' method='POST')
+      .form-column
+        span.calc-subheader Name
+        .calc-row
+          input.bbTextBox.calc-textbox(type='text' name='name' placeholder='Name' value='')
+        span.calc-subheader Age
+        .calc-row
+          input.bbTextBox.calc-textbox(type='text' name='age' placeholder='Years' value='')
+        span.calc-subheader Sex
+        .calc-row
+          input#macros-male(type='radio' name='sex' value='M' checked='checked')
+          label.calc-label-small(for='macros-male')
+            span
+            | Male
+          input#macros-female(type='radio' name='sex' value='F')
+          label.calc-label-small.calc-float-right(for='macros-female')
+            span
+            | Female
+        span.calc-subheader Height
+        .calc-row
+          input.bbTextBox.calc-textbox-half(type='text' name='heightfeet' placeholder='Feet' value='')
+          input.bbTextBox.calc-textbox-half.calc-float-right(type='text' name='heightinch' placeholder='Inches' value='')
+        span.calc-subheader Weight
+        .calc-row
+          input.bbTextBox.calc-textbox(type='text' name='weight' placeholder='Kilograms')
+        span.calc-subheader Activity Level
+        .calc-row
+          input#macros-activity1(type='radio' name='activity' value='S' checked='')
+          label.calc-label(for='macros-activity1')
+            span
+            | Sedentary (Little or no exercise)
+        .calc-row
+          input#macros-activity2(type='radio' name='activity' value='L')
+          label.calc-label(for='macros-activity2')
+            span
+            | Lightly active (Light exercise/sports 3-5 days a week)
+        .calc-row
+          input#macros-activity3(type='radio' name='activity' value='M')
+          label.calc-label(for='macros-activity3')
+            span
+            | Moderately active (Moderate exercise/sports 3-5 days a week)
+        .calc-row
+          input#macros-activity4(type='radio' name='activity' value='V')
+          label.calc-label(for='macros-activity4')
+            span
+            | Very active (Hard exercise/sports 6-7 days a week)
+        .calc-row
+          input#macros-activity5(type='radio' name='activity' value='E')
+          label.calc-label(for='macros-activity5')
+            span
+            | Extra active (Hard exercise/sports 6-7 days a week, plus physical job)
+        if result
+          button(type='submit') Re-Calculate
+        else
+          button(type='submit') Calculate
+footer
+  p Web Systems Integration - Spring 2021
