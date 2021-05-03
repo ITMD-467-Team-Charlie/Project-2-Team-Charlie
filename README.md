@@ -24,6 +24,8 @@
 5. Integration HTML5 into app.js
 6. Added mocha tester
 7. Added profile + recipe changes
+8. Added JSDoc functionality
+9. Added Backstop
 
 ### Integrations
 
