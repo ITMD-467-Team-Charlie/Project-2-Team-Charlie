@@ -5,7 +5,9 @@ const recipeModel = require('../models/RecipeModel');
 const RecipeController = require('../controllers/RecipeController');
 
 /**
- * 
+ * Get list of recipes based on user profile
+ * @property {object} req - request object.
+ * @property {object} res- response object.
  */
 router.get('/', function(req, res, next) {
     try {
@@ -53,6 +55,11 @@ router.get('/', function(req, res, next) {
     }
 });
 
+/**
+ * Get list of recipes based on user profile after user registration
+ * @property {object} req - request object.
+ * @property {object} res- response object.
+ */
 router.post('/find', function(req, res) {
     try {
         var userprofile = new profileModel(req.session.user);
@@ -72,7 +79,11 @@ router.post('/find', function(req, res) {
     }
 });
 
-
+/**
+ * Add a recepie to user profile
+ * @property {object} req - request object.
+ * @property {object} res- response object.
+ */
 router.post('/addrecepie', async(req, res) => {
     try {
         var profileid = req.cookies.profile;
@@ -99,6 +110,11 @@ router.post('/addrecepie', async(req, res) => {
     }
 })
 
+/**
+ * Get recepies from user profile
+ * @property {object} req - request object.
+ * @property {object} res- response object.
+ */
 router.get('/myrecipes', async(req, res) => {
     try {
         var profileid = req.cookies.profile;
@@ -118,6 +134,11 @@ router.get('/myrecipes', async(req, res) => {
 })
 
 
+/**
+ * Calculate BMI and Caloris for user profile
+ * @property {object} req - request object.
+ * @property {object} res- response object.
+ */
 router.post('/calculate', async(req, res) => {
     try {
         var user = new Object();
@@ -142,7 +163,10 @@ router.post('/calculate', async(req, res) => {
 
 
 
-
+/**
+ * Calculate BMR and Calories for user profile
+ * @property {object} user  - UserProfile Model
+ */
 function calculateBMR(user) {
 
     user.carbratio = 0.4;
@@ -212,6 +236,10 @@ function calculateBMR(user) {
     return user;
 }
 
+/**
+ * Calculate BMI user profile
+ * @property {object} user  - UserProfile Model
+ */
 function calculateBMI(user) {
 
     var totalfeethight = (user.heightfeet * 0.3048) + (user.heightinch * 0.0254);
