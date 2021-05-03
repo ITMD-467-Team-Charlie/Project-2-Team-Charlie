@@ -8,7 +8,7 @@
 2. Lazy loading update 
 3. ESLint integration 
 4. SSL integration
-5. Integration HTML5 into app.js
+5. Integrated pug for application view
 6. Added mocha tester
 7. Added profile + recipe changes
 8. Added JSDoc functionality
