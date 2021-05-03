@@ -8,6 +8,9 @@
     "docs": "jsdoc -c jsdoc.json",
     "dev-start": "DEBUG=project:* npm start",
     "dev": "nodemon ./bin/www",
+	"tester": "NODE_ENV=tester mocha"
+    "approve": "backstop approve",
+    "test": "backstop test",
     "lint": "eslint . --config=.eslintrc.js",
     "lint-fix": "eslint . --config=.eslintrc.js --fix",
     "bk-approve": "backstop approve",
@@ -38,6 +41,9 @@
   },
   "main": "app.js",
   "devDependencies": {
+    "mocha": "^8.3.2",
+    "nodemon": "^2.0.7",
+    "eslint": "^7.23.0",
     "eslint": "^7.25.0",
     "eslint-config-airbnb-base": "^14.2.1",
     "eslint-config-standard": "^16.0.2",
