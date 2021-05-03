@@ -152,15 +152,14 @@ head
         .column
         .column
         .column
-    a(href='/myrecipes') My Recipes
   #display-dishes.search-content
     for dish in dishes
       .search-column
-        a#dish(data-dish=dish.id onclick="getDishDetails(this.getAttribute('data-dish'));")
+        a#dish(data-dish=dish.rid onclick="getDishDetails(this.getAttribute('data-dish'));")
           .card
-            img.card-image(src=dish.recipe.image alt=dish.recipe.label onerror="this.src='/images/noimage.png'")
+            img.card-image(src=dish.image alt=dish.name onerror="this.src='/images/noimage.png'")
             .search-container
-              .title #{dish.recipe.label}
+              .title #{dish.name}
               .card-nutrients
                 table
                   tr
@@ -181,7 +180,7 @@ head
                     td g
                   tr
                     td Calories
-                    td #{(dish.recipe.calories).toFixed(0)}
+                    td #{(dish.calories).toFixed(0)}
                     td kcal
                 figure
                   .graphic

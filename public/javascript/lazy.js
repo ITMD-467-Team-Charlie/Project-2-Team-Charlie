@@ -116,7 +116,7 @@ function loadArticle(params, query) {
     var cal = minCal.value + '-' + maxCal.value;
     var ing = maxIng.value;
     $.ajax({
-        url: 'http://localhost:3000/api/recepie?from=' + recordsOffset + '&to=' + to,
+        url: '/api/recepie?q=' + searchText + '&from=' + recordsOffset + '&to=' + to,
         type: 'get', // send it through get method
         success: function(response) {
             // Do Something
@@ -132,7 +132,6 @@ function loadArticle(params, query) {
                 var text = $(this).text();
                 $(this).parent().css('width', text);
             });
-            console.log('dish list');
         },
         error: function(xhr) {
             // Do Something to handle error
