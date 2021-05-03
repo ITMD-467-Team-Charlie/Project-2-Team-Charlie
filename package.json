@@ -1,16 +1,23 @@
 {
   "name": "nutritionguide",
   "version": "1.0.0-alpha",
+  "description": "## Sean Reimer, Maksym Melnyk, Sainath Reddy, Sharath Manchikatla, Arthur Arreguin ## 2/25/2021",
   "private": true,
   "scripts": {
     "start": "node ./bin/www",
     "docs": "jsdoc -c jsdoc.json",
     "dev-start": "DEBUG=project:* npm start",
     "dev": "nodemon ./bin/www",
-    "approve": "backstop approve",
-    "test": "backstop test",
+    "lint": "eslint . --config=.eslintrc.js",
+    "lint-fix": "eslint . --config=.eslintrc.js --fix",
+    "bk-approve": "backstop approve",
+    "bk-test": "backstop test",
     "reference": "backstop reference",
     "init": "backstop init"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ITMD-467-Team-Charlie/Project-2-Team-Charlie.git"
   },
   "dependencies": {
     "backstopjs": "^5.3.2",
@@ -31,14 +38,18 @@
   },
   "main": "app.js",
   "devDependencies": {
-    "nodemon": "^2.0.7",
-    "eslint": "^7.23.0",
+    "eslint": "^7.25.0",
+    "eslint-config-airbnb-base": "^14.2.1",
     "eslint-config-standard": "^16.0.2",
     "eslint-plugin-import": "^2.22.1",
     "eslint-plugin-node": "^11.1.0",
-    "eslint-plugin-promise": "^4.3.1"
+    "eslint-plugin-promise": "^4.3.1",
+    "nodemon": "^2.0.7"
   },
   "author": "",
   "license": "ISC",
-  "description": "## Sean Reimer, Maksym Melnyk, Sainath Reddy, Sharath Manchikatla, Arthur Arreguin ## 2/25/2021"
+  "bugs": {
+    "url": "https://github.com/ITMD-467-Team-Charlie/Project-2-Team-Charlie/issues"
+  },
+  "homepage": "https://github.com/ITMD-467-Team-Charlie/Project-2-Team-Charlie#readme"
 }
