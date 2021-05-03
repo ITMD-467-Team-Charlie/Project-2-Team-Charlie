@@ -1,3 +1,28 @@
+# __v1.0.0-alpha.1__
+
+### [Alpha.1 Release] - Sunday, 2 May 2021
+
+### Features
+
+1. Created user profile registration
+2. Lazy loading update 
+3. ESLint integration 
+4. SSL integration
+5. Integration HTML5 into app.js
+
+### Integrations
+
+1. Food Dish Search External API
+2. Database integration
+3. API integration with the app
+
+
+### ScreenShot
+
+![image](https://user-images.githubusercontent.com/43916250/116841897-33f8ea00-aba0-11eb-8988-87104eac9919.png)
+
+
+
 # __v1.0.0-alpha__
 
 ### [Alpha Release] - Thu, 25 Mar 2021
