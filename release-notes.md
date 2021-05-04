@@ -1,3 +1,31 @@
+# __v1.0.0-beta__
+
+### [Beta Release] - Monday, 3 May 2021
+
+### Features
+
+1. Created user profile registration
+2. Lazy loading update 
+3. ESLint integration 
+4. SSL integration
+5. Integrated pug for application view
+6. Added mocha tester
+7. Added profile + recipe changes
+8. Added JSDoc functionality
+9. Added Backstop
+
+### Integrations
+
+1. Food Dish Search External API
+2. Database integration
+3. API integration with the app
+
+
+### ScreenShot
+
+![1](https://user-images.githubusercontent.com/57924210/116935113-8501f000-ac2b-11eb-9056-054745a5ee93.PNG)
+
+
 # __v1.0.0-alpha.1__
 
 ### [Alpha.1 Release] - Sunday, 2 May 2021
