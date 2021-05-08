@@ -4,7 +4,7 @@
   "description": "## Sean Reimer, Maksym Melnyk, Sainath Reddy, Sharath Manchikatla, Arthur Arreguin ## 2/25/2021",
   "private": true,
   "scripts": {
-    "start": "node ./bin/www",
+	"start": "pm2-runtime start ecosystem.config.js --env production"
     "docs": "jsdoc -c jsdoc.json",
     "dev-start": "DEBUG=project:* npm start",
     "dev": "nodemon ./bin/www",
@@ -14,7 +14,8 @@
     "bk-approve": "backstop approve",
     "bk-test": "backstop test",
     "reference": "backstop reference",
-    "init": "backstop init"
+	"pm-start": "pm2 start ./bin/www",
+	"pm-stop": "pm2 stop ./bin/www"
   },
   "repository": {
     "type": "git",
