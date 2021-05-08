@@ -4,7 +4,7 @@
   "description": "## Sean Reimer, Maksym Melnyk, Sainath Reddy, Sharath Manchikatla, Arthur Arreguin ## 2/25/2021",
   "private": true,
   "scripts": {
-    "start": "node ./bin/www",
+    "start": "PORT=3000 pm2 start ./bin/www",
     "docs": "jsdoc -c jsdoc.json",
     "dev-start": "DEBUG=project:* npm start",
     "dev": "nodemon ./bin/www"
@@ -26,6 +26,7 @@
     "jsdoc": "^3.6.6",
     "mongoose": "^5.12.5",
     "morgan": "~1.9.1",
+    "pm2": "^4.5.6",
     "pug": "^3.0.2",
     "request": "^2.88.2"
   },

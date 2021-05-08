@@ -79,6 +79,7 @@ router.post('/find', function(req, res) {
     }
 });
 
+
 /**
  * Add a recepie to user profile
  * @property {object} req - request object.
@@ -109,6 +110,8 @@ router.post('/addrecepie', async(req, res) => {
         console.log(error);
     }
 })
+
+
 
 /**
  * Get recepies from user profile
@@ -160,7 +163,6 @@ router.post('/calculate', async(req, res) => {
         console.log(error);
     }
 });
-
 
 
 /**
