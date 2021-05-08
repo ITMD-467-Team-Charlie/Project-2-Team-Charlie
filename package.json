@@ -4,6 +4,7 @@
   "description": "## Sean Reimer, Maksym Melnyk, Sainath Reddy, Sharath Manchikatla, Arthur Arreguin ## 2/25/2021",
   "private": true,
   "scripts": {
+	"preinstall": "npm install pm2 -g",
     "start": "pm2-runtime start ecosystem.config.js --env production",
     "docs": "jsdoc -c jsdoc.json",
     "dev-start": "DEBUG=project:* npm start",
