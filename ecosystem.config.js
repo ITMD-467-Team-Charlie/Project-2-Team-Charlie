@@ -3,7 +3,6 @@ module.exports = {
     name: "nutritionguide",
     script: "start ./bin/www",
     instances: "1",
-	exec_mode: 'cluster_mode',
     env: {
       NODE_ENV: "development",
     },
