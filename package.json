@@ -5,7 +5,7 @@
   "private": true,
   "scripts": {
 	"preinstall": "npm install pm2 -g",
-    "start": "PORT=3000 pm2 start ./bin/www",
+    "start": "pm2-runtime app.js",
     "docs": "jsdoc -c jsdoc.json",
     "dev-start": "DEBUG=project:* npm start",
     "dev": "nodemon ./bin/www"
