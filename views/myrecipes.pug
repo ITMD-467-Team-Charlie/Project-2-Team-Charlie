@@ -1,0 +1,208 @@
+doctype html
+head
+  title Nutrition Guide
+  meta(charset='utf-8')
+  meta(name='viewport' content='width=device-width, initial-scale=1')
+  link(rel='stylesheet' href='/stylesheets/screen.css')
+  link(rel='stylesheet' href='/stylesheets/search-box.css')
+  link(rel='stylesheet' href='/stylesheets/dishdetails.css')
+  link(rel='stylesheet' href='/stylesheets/chart.css')
+  script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js')
+// Side navigation
+#mySidenav.sidenav
+  .sidenav-close
+    a#ham-close.closebtn &times;
+  .sidenav-title  Min. Calories
+  .slidecontainer
+    input#minCal.slider(type='range' min='0' max='10000' value='0' step='100')
+    p
+      | Value: 
+      span#demo1
+  .sidenav-title  Max. Calories
+  .slidecontainer
+    input#maxCal.slider(type='range' min='0' max='10000' value='10000' step='100')
+    p
+      | Value: 
+      span#demo2
+  .sidenav-title  Max. Ingredients
+  .slidecontainer
+    input#maxIngredients.slider(type='range' min='0' max='50' value='25' step='5')
+    p
+      | Value: 
+      span#demo3
+  button#filter.block(type='button') Submit
+// Page content
+.main
+  .navbar
+    .dropdown
+      #ham-open.ham-outer
+        .hamburger
+        .hamburger
+        .hamburger
+    a(href='/') Home
+    .dropdown
+      button.dropbtn
+        | Health
+        i.fa.fa-caret-down
+      .dropdown-content
+        .column
+          a#info(data-id='alcohol-free') Alcohol-free
+          a#info(data-id='immuno-supportive') Immune-Supportive
+          a#info(data-id='celery-free') Celery-free
+          a#info(data-id='crustacean-free') Crustcean-free
+          a#info(data-id='dairy-free') Dairy-free
+        .column
+          a#info(data-id='egg-free') Eggs-free
+          a#info(data-id='fish-free') Fish-free
+          a#info(data-id='fodmap-free') FODMAP free
+          a#info(data-id='gluten-free') Gluten free
+          a#info(data-id='keto-friendly') Keto Friendly
+        .column
+          a#info(data-id='kidney-friendly') Kidney friendly
+          a#info(data-id='kosher') Kosher
+          a#info(data-id='low-potassium') Low potassium
+          a#info(data-id='lupine-free') Lupine-free
+          a#info(data-id='mustard-free') Mustard-free
+        .column
+          a#info(data-id='No-oil-added') No oil added
+          a#info(data-id='low-sugar') No-sugar
+          a#info(data-id='paleo') Paleo
+          a#info(data-id='vegetarian') Vegetarian
+          a#info(data-id='vegan') Vegan
+    .dropdown
+      button.dropbtn
+        | Diet 
+        i.fa.fa-caret-down
+      .dropdown-content
+        .column
+          a#info(data-id='balanced') Balanced
+          a#info(data-id='high-fiber') High-Fiber
+          a#info(data-id='high-protein') High-Protein
+          a#info(data-id='low-carb') Low-Carb
+          a#info(data-id='low-fat') Low-Fat
+        .column
+          a#info(data-id='low-sodium') Low-Sodium
+        .column
+        .column
+    .dropdown
+      button.dropbtn
+        | Cuisine Type 
+        i.fa.fa-caret-down
+      .dropdown-content
+        .rowN
+          .column
+            a#info(data-id='American') American
+            a#info(data-id='Asian') Asian
+            a#info(data-id='British') British
+            a#info(data-id='Central Europe') Central Europe
+            a#info(data-id='Chinese') Chinese
+          .column
+            a#info(data-id='Eastern Europe') Eastern Europe
+            a#info(data-id='French') French
+            a#info(data-id='Indian') Indian
+            a#info(data-id='Italian') Italian
+            a#info(data-id='South East Asian') South East Asian
+          .column
+            a#info(data-id='Japanese') Japanese
+            a#info(data-id='Mediterranean') Mediterranean
+            a#info(data-id='Mexican') Mexican
+            a#info(data-id='Middle Eastern') Middle Eastern
+            a#info(data-id='South American') South American
+          .column
+            a#info(data-id='Caribbean') Caribbean
+            a#info(data-id='Nordic') Nordic
+            a#info(data-id='Kosher') Kosher
+    .dropdown
+      button.dropbtn
+        | Dish Type 
+        i.fa.fa-caret-down
+      .dropdown-content
+        .column
+          a#info(data-id='Starter') Starter
+          a#info(data-id='Soup') Soup
+          a#info(data-id='Sandwiches') Sandwiches
+          a#info(data-id='Salad') Salad
+          a#info(data-id='Preserve') Preserve
+        .column
+          a#info(data-id='Preps') Preps
+          a#info(data-id='Pancake') Pancake
+          a#info(data-id='Omelet') Omelet
+          a#info(data-id='Main course') Main course
+          a#info(data-id='Egg') Egg
+        .column
+          a#info(data-id='Desserts') Desserts
+          a#info(data-id='Drinks') Drinks
+          a#info(data-id='Condiments and sauces') Condiments and sauces
+          a#info(data-id='Cereals') Cereals
+          a#info(data-id='Bread') Bread
+        .column
+          a#info(data-id='Biscuits and cookies') Biscuits and cookies
+          a#info(data-id='Alcohol-cocktail') Alcohol-cocktail
+    .dropdown
+      button.dropbtn
+        | Meal Type 
+        i.fa.fa-caret-down
+      .dropdown-content
+        .column
+          a#info(data-id='Breakfast') Breakfast
+          a#info(data-id='Lunch') Lunch
+          a#info(data-id='Dinner') Dinner
+          a#info(data-id='Snack') Snack
+          a#info(data-id='Teatime') Teatime
+        .column
+        .column
+        .column
+  #display-dishes.search-content
+    for dish in dishes
+      .search-column
+        a#dish(data-dish=dish.rid onclick="getDishDetails(this.getAttribute('data-dish'));")
+          .card
+            img.card-image(src=dish.image alt=dish.name onerror="this.src='/images/noimage.png'")
+            .search-container
+              .title #{dish.name}
+              .card-nutrients
+                table
+                  tr
+                    th
+                    th Total
+                    th Unit
+                  tr
+                    td Fat
+                    td #{dish.fat}
+                    td g
+                  tr
+                    td Carbs
+                    td #{dish.carb}
+                    td g
+                  tr
+                    td Protein
+                    td #{dish.protein}
+                    td g
+                  tr
+                    td Calories
+                    td #{(dish.calories).toFixed(0)}
+                    td kcal
+                figure
+                  .graphic
+                    .row-chart
+                      .chart
+                        span.block-chart(title='Fat' style='width:'+dish.fatr+'%;')
+                          span.value #{dish.fatr}%
+                        span.block-chart(title='Carbs' style='width:'+dish.carbr+'%;')
+                          span.value #{dish.carbr}%
+                        span.block-chart(title='Protine' style='width:'+dish.protiner+'%;')
+                          span.value #{dish.protiner}%
+
+  // The Modal
+  #details-model.details-modal
+    // Modal content
+    .details-modal-content
+      span.details-close &times;
+      .row-details
+        #ingredientLines.col-5.menu-details
+        #digest.col-5.table-details
+      .row-details
+        #tags.col-11.labels
+        #cautions.col-11.labels.red
+script(src='/javascript/main.js')
+script(src='/javascript/lazy.js')
