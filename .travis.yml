@@ -1,0 +1,11 @@
+language: node_js
+node_js:
+  - 10.19.0
+services:
+install: npm install --save-dev
+
+script:
+  - npm test
+  - npm run lint
+  - npm run bk-test
+  
