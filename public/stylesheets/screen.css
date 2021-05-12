@@ -247,6 +247,7 @@ input[type=submit] {
   font-size: 25px;
   color: #818181;
   display: block;
+  cursor: pointer;
 }
 
 /* When you mouse over the navigation links, change their color */
