@@ -39,7 +39,7 @@ exports.userRecipeList = function(req, res) {
                         activity: profile.activity,
                         goal: profile.goal,
                         ratio: profile.ratio,
-                        bml: profile.bmi,
+                        bmi: profile.bmi,
                         calories: profile.calories,
                         ccarbs: profile.ccarbs,
                         cprotons: profile.cprotons,
