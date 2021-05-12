@@ -42,19 +42,14 @@ function makeUL(array, id) {
     });
 });
 
-var minCal = document.getElementById('minCal');
-var maxCal = document.getElementById('maxCal');
-var maxIng = document.getElementById('maxIngredients');
-var output1 = document.getElementById('demo1');
-var output2 = document.getElementById('demo2');
-var output3 = document.getElementById('demo3');
-output1.innerHTML = minCal.value;
+
+var maxCal = document.getElementById("maxcal");
+var maxIng = document.getElementById("maxing");
+var output1 = document.getElementById("demo1");
+var output2 = document.getElementById("demo2");
+var output3 = document.getElementById("demo3");
 output2.innerHTML = maxCal.value;
 output3.innerHTML = maxIng.value;
-
-minCal.oninput = function() {
-    output1.innerHTML = this.value;
-};
 
 maxCal.oninput = function() {
     output2.innerHTML = this.value;
@@ -66,6 +61,7 @@ maxIng.oninput = function() {
 
 document.getElementById('filter').addEventListener('click', function() {
     loadArticle({ action: 'initialization' }, searchText);
+	  document.getElementById('mySidenav').style.width = "0";
 });
 
 document.getElementById('ham-open').addEventListener('click', function() {

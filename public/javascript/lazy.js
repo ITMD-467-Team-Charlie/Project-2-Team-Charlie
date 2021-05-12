@@ -113,8 +113,8 @@ function loadArticle(params, query) {
         recordsTotal = 1000; // store total number of record
         to = 30;
     }
-    var cal = minCal.value + '-' + maxCal.value;
-    var ing = maxIng.value;
+	var cal = '0-' + $('#maxcal').val();
+	var ing = $('#maxing').val();
     $.ajax({
         url: '/api/recepie?q=' + searchText + '&from=' + recordsOffset + '&to=' + to,
         type: 'get', // send it through get method
