@@ -1,7 +1,13 @@
+/**
+ * Controller for processing recipe and api requests
+ *
+ * @module recipeController
+ */
 const apiResponse = require("../helpers/apiResponse");
 const httpreq = require("request");
 const { endpoint, key, id } = require('../utils/config');
-const recipeModel = require('../models/RecipeModel');
+var mongoose = require( 'mongoose' );
+const recipeModel = mongoose.model('Recipe');
 
 /**
  * Fetch list of recipes from the configured external service as API.
@@ -9,7 +15,7 @@ const recipeModel = require('../models/RecipeModel');
  * @param res Response object
  * @returns {Object} JSON
  */
-exports.recipeList = function(req, res) {
+exports.recipeListAPI = function(req, res) {
 
     try {
         var c = '0-10000';
