@@ -1,14 +1,14 @@
+'use strict';
 /** Express router providing api related routes
  * @module routes/api
  * @requires express
  */
 
-
 /**
  * express module
  * @const
  */
- var express = require('express');
+const express = require('express');
 
 /**
  * Express router to mount api related functions.
@@ -16,9 +16,8 @@
  * @const
  * @namespace apiRouter
  */
-var apirouter = express.Router();
-const RecipeController = require("../controllers/RecipeController");
-
+const apirouter = express.Router();
+const RecipeController = require('../controllers/RecipeController');
 
 /**
  * Route serving Get list API for recipes as json response.

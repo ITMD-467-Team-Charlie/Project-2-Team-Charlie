@@ -1,3 +1,4 @@
+'use strict';
 /** Express router providing user related routes
  * @module routes/profile
  * @requires express
@@ -7,7 +8,7 @@
  * express module
  * @const
  */
-var express = require('express');
+const express = require('express');
 
 /**
  * Express router to mount user related functions.
@@ -15,10 +16,9 @@ var express = require('express');
  * @const
  * @namespace profileRouter
  */
-var profileRouter = express.Router();
+const profileRouter = express.Router();
 
 const ProfileController = require('../controllers/ProfileController');
-
 
 /**
  * Route serving Get list of recipes based on user profile.
@@ -31,11 +31,10 @@ const ProfileController = require('../controllers/ProfileController');
  */
 profileRouter.get('/', ProfileController.userRecipeList);
 
-
 /**
  * Route serving to Get list of recipes based on user profile after user registration.
  * @name post/find
- * @function 
+ * @function
  * @memberof module:routes/profile~profileRouter
  * @inner
  * @param {string} path - Express path
@@ -43,11 +42,10 @@ profileRouter.get('/', ProfileController.userRecipeList);
  */
 profileRouter.post('/find', ProfileController.saveProfile);
 
-
 /**
  * Route serving to Add a recepie to user profile.
  * @name post/addrecepie
- * @function 
+ * @function
  * @memberof module:routes/profile~profileRouter
  * @inner
  * @param {string} path - Express path
@@ -55,11 +53,10 @@ profileRouter.post('/find', ProfileController.saveProfile);
  */
 profileRouter.post('/addrecepie', ProfileController.saveRecepie);
 
-
 /**
  * Route serving to Get recepies from user profile.
  * @name get/myrecipes
- * @function 
+ * @function
  * @memberof module:routes/profile~profileRouter
  * @inner
  * @param {string} path - Express path
@@ -67,17 +64,15 @@ profileRouter.post('/addrecepie', ProfileController.saveRecepie);
  */
 profileRouter.get('/myrecipes', ProfileController.savedRecepies);
 
-
 /**
  * Route serving to Calculate BMI and Caloris for user profile.
  * @name post/calculate
- * @function 
+ * @function
  * @memberof module:routes/profile~profileRouter
  * @inner
  * @param {string} path - Express path
  * @param {function} contoller - ProfileController.analyzeProfile
  */
 profileRouter.post('/calculate', ProfileController.analyzeProfile);
-
 
 module.exports = profileRouter;
