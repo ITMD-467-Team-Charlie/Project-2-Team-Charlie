@@ -2,8 +2,8 @@ module.exports = async (page, scenario) => {
   const hoverSelector = scenario.hoverSelectors || scenario.hoverSelector;
   const clickSelector = scenario.clickSelectors || scenario.clickSelector;
   const keyPressSelector = scenario.keyPressSelectors || scenario.keyPressSelector;
-  const scrollToSelector = scenario.scrollToSelector;
-  const postInteractionWait = scenario.postInteractionWait; // selector [str] | ms [int]
+  const { scrollToSelector } = scenario;
+  const { postInteractionWait } = scenario; // selector [str] | ms [int]
 
   if (keyPressSelector) {
     for (const keyPressSelectorItem of [].concat(keyPressSelector)) {
@@ -32,7 +32,7 @@ module.exports = async (page, scenario) => {
 
   if (scrollToSelector) {
     await page.waitFor(scrollToSelector);
-    await page.evaluate(scrollToSelector => {
+    await page.evaluate((scrollToSelector) => {
       document.querySelector(scrollToSelector).scrollIntoView();
     }, scrollToSelector);
   }

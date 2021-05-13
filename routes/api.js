@@ -1,8 +1,8 @@
-var express = require("express");
-var recepieRouter = require("./recepie");
+const express = require('express');
+const recepieRouter = require('./recepie');
 
-var app = express();
+const app = express();
 
-app.use("/recepie/", recepieRouter);
+app.use('/recepie/', recepieRouter);
 
 module.exports = app;

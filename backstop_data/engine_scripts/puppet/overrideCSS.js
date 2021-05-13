@@ -1,4 +1,4 @@
-const BACKSTOP_TEST_CSS_OVERRIDE = `html {background-image: none;}`;
+const BACKSTOP_TEST_CSS_OVERRIDE = 'html {background-image: none;}';
 
 module.exports = function (page, scenario) {
   // inject arbitrary css to override styles
@@ -11,5 +11,5 @@ module.exports = function (page, scenario) {
     document.head.appendChild(style);
   });
 
-  console.log('BACKSTOP_TEST_CSS_OVERRIDE injected for: ' + scenario.label);
+  console.log(`BACKSTOP_TEST_CSS_OVERRIDE injected for: ${scenario.label}`);
 };
