@@ -12,6 +12,7 @@ deploy:
 services: mongodb
 install: npm install --save-dev
 script:
+
 - npm test
 - npm run lint:node
 - npm run lint:browser  
