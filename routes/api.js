@@ -1,8 +1,35 @@
-var express = require("express");
-var recepieRouter = require("./recepie");
+/** Express router providing api related routes
+ * @module routes/api
+ * @requires express
+ */
 
-var app = express();
 
-app.use("/recepie/", recepieRouter);
+/**
+ * express module
+ * @const
+ */
+ var express = require('express');
 
-module.exports = app;
+/**
+ * Express router to mount api related functions.
+ * @type {object}
+ * @const
+ * @namespace apiRouter
+ */
+var apirouter = express.Router();
+const RecipeController = require("../controllers/RecipeController");
+
+
+/**
+ * Route serving Get list API for recipes as json response.
+ * @name get/recepie
+ * @function
+ * @memberof module:routes/api~apiRouter
+ * @inner
+ * @param {string} path - Express path
+ * @param {function} contoller - RecipeController.recipeListAPI
+ * @return {object} json - list of recipes
+ */
+apirouter.get('/recepie', RecipeController.recipeListAPI);
+
+module.exports = apirouter;
