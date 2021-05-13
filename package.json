@@ -8,7 +8,7 @@
     "docs": "jsdoc -c jsdoc.json",
     "dev-start": "DEBUG=project:* npm start",
     "dev": "nodemon ./bin/www",
-    "test": "mocha",
+    "test": "mocha --recursive --exit",
     "lint": "eslint . --config=.eslintrc.js",
     "lint-fix": "eslint . --config=.eslintrc.js --fix",
     "bk-approve": "backstop approve",
