@@ -16,6 +16,7 @@ const configs = require('./utils/config');
 require('./db/connect');
 const apiRouter = require('./routes/api');
 const profileRouter = require('./routes/profile');
+const recipeRouter = require('./routes/recipe');
 
 const app = express();
 
@@ -38,6 +39,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 // app routes
 app.use('/', profileRouter);
+app.use('/details/', recipeRouter);
 app.use('/api/', apiRouter);
 
 // catch 404 and forward to error handler

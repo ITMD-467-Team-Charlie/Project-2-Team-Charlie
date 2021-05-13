@@ -5,7 +5,6 @@ head
   meta(name='viewport' content='width=device-width, initial-scale=1')
   link(rel='stylesheet' href='/stylesheets/screen.css')
   link(rel='stylesheet' href='/stylesheets/search-box.css')
-  link(rel='stylesheet' href='/stylesheets/dishdetails.css')
   link(rel='stylesheet' href='/stylesheets/chart.css')
   script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js')
 // Side navigation
@@ -14,6 +13,7 @@ nav#mySidenav.sidenav
     a#ham-close.closebtn &times;
   section.sidenav-title  Max. Calories
   section.slidecontainer
+    input#lazy(type='hidden' name='lazy' value='true')
     input#maxcal.slider(type='range' min='0' max='10000' value='10000' step='100')
     p
       | Value: 
@@ -146,11 +146,11 @@ main.main
         section.column
         section.column
         section.column
-    a(href='/myrecipes') My Recipes
+    a(href='/myrecipes') Saved Recipes
   section#display-dishes.search-content
     for dish in dishes
       section.search-column
-        a#dish(data-dish=dish.id onclick="getDishDetails(this.getAttribute('data-dish'));")
+        section#dish(data-dish=dish.id)
           section.card
             img.card-image(src=dish.recipe.image alt=dish.recipe.label onerror="this.src='/images/noimage.png'")
             section.search-container
@@ -187,6 +187,8 @@ main.main
                           span.value #{dish.carbr}%
                         span.block-chart(title='Protine' style='width:'+dish.protiner+'%;')
                           span.value #{dish.protiner}%
+            a(href='/details/recipe?rid='+dish.id target='_blank') +More Details
+            button#save.bclass(data-id=dish.id) Save
 
   // The Modal
   section#details-model.details-modal

@@ -23,13 +23,18 @@
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 1);
 }
 
+.bclass {
+    float: right;
+}
 
+.bclass:hover {
+    cursor: pointer;
+}
 /* On mouse-over, add a deeper shadow */
 
 .card:hover {
     box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 1);
     background-color: white;
-    cursor: pointer;
 }
 
 .search-container {

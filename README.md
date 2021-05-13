@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.com/ITMD-467-Team-Charlie/Project-2-Team-Charlie.svg?branch=main)](https://travis-ci.com/ITMD-467-Team-Charlie/Project-2-Team-Charlie)
+
 # Project 2 Team Charlie
 
 ## Sean Reimer, Maksym Melnyk, Sainath Reddy, Sharath Manchikatla, Arthur Arreguin
