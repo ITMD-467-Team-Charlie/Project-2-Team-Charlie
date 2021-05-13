@@ -88,22 +88,22 @@ function enrichJson(dishes) {
     dish.id = id;
     const percentages = [];
     const nutrients = dish.recipe.digest.slice(0, 3);
-    const nutrient_cal = (parseInt(nutrients[0].total.toFixed(0)) * 9) + (parseInt(nutrients[1].total.toFixed(0)) * 4) + (parseInt(nutrients[2].total.toFixed(0)) * 4);
+    const nutrientCal = (parseInt(nutrients[0].total.toFixed(0)) * 9) + (parseInt(nutrients[1].total.toFixed(0)) * 4) + (parseInt(nutrients[2].total.toFixed(0)) * 4);
 
     for (const digest of nutrients) {
       const total = digest.total.toFixed(0);
       let per = 0;
       switch (digest.label) {
         case 'Fat':
-          per = parseInt((((total * 9) / nutrient_cal) * 100).toFixed(0));
+          per = parseInt((((total * 9) / nutrientCal) * 100).toFixed(0));
           dish.fat = total;
           break;
         case 'Carbs':
-          per = parseInt((((total * 4) / nutrient_cal) * 100).toFixed(0));
+          per = parseInt((((total * 4) / nutrientCal) * 100).toFixed(0));
           dish.carb = total;
           break;
         case 'Protein':
-          per = parseInt((((total * 4) / nutrient_cal) * 100).toFixed(0));
+          per = parseInt((((total * 4) / nutrientCal) * 100).toFixed(0));
           dish.protein = total;
           break;
         default:

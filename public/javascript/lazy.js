@@ -15,7 +15,7 @@ function printHtml(dishes) {
   let html = '';
 
   for (const dish of dishes.data) {
-    const calories = (dish.recipe.calories / dish.recipe.yield).toFixed(0);
+    const calories = (dish.recipe.yield).toFixed(0);
     const id = dish.recipe.uri.split('#')[1];
     if (typeof (Storage) !== 'undefined') {
       // Store
@@ -26,7 +26,9 @@ function printHtml(dishes) {
     }
     const percentages = [];
     const nutrients = dish.recipe.digest.slice(0, 3);
-    const nutrient_cal = (parseInt(nutrients[0].total.toFixed(0)) * 9) + (parseInt(nutrients[1].total.toFixed(0)) * 4) + (parseInt(nutrients[2].total.toFixed(0)) * 4);
+    const nutrientCal = (parseInt(nutrients[0].total.toFixed(0)) * 9)
+    + (parseInt(nutrients[1].total.toFixed(0)) * 4)
+    + (parseInt(nutrients[2].total.toFixed(0)) * 4);
     let tbl = '';
     const cal = dish.recipe.calories;
     for (const digest of nutrients) {
@@ -34,16 +36,16 @@ function printHtml(dishes) {
       let per = 0;
       switch (digest.label) {
         case 'Fat':
-          per = parseInt((((total * 9) / nutrient_cal) * 100).toFixed(0));
+          per = parseInt((((total * 9) / nutrientCal) * 100).toFixed(0));
           break;
         case 'Carbs':
-          per = parseInt((((total * 4) / nutrient_cal) * 100).toFixed(0));
+          per = parseInt((((total * 4) / nutrientCal) * 100).toFixed(0));
           break;
         case 'Protein':
-          per = parseInt((((total * 4) / nutrient_cal) * 100).toFixed(0));
+          per = parseInt((((total * 4) / nutrientCal) * 100).toFixed(0));
           break;
         default:
-                    // code block
+        // code block
       }
       percentages.push(per);
       const h = `<tr><td>${digest.label}</td><td>${total}</td><td>${digest.unit}</td></tr>`;
