@@ -48,7 +48,7 @@ function enrichJson(dishes) {
         dish.protein = total;
         break;
       default:
-                    // code block
+              // code block
       }
       percentages.push(per);
     });
