@@ -1,7 +1,8 @@
 const mongoose = require('mongoose');
+const { testdb } = require('../utils/config');
 //tell mongoose to use es6 implementation of promises
 mongoose.Promise = global.Promise;
-mongoose.connect('mongodb://localhost/userprofiles'); 
+mongoose.connect(testdb, { useNewUrlParser: true, useUnifiedTopology: true }); 
 mongoose.connection
     .once('open', () => {console.log('Connected!');})
     .on('error', (error) => {

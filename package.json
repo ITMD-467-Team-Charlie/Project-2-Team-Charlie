@@ -1,16 +1,15 @@
 {
   "name": "nutritionguide",
-  "version": "1.0.0-beta",
-  "description": "## Sean Reimer, Maksym Melnyk, Sainath Reddy, Sharath Manchikatla, Arthur Arreguin ## 2/25/2021",
+  "version": "1.0.0",
+  "description": "## Sean Reimer, Maksym Melnyk, Sainath Reddy, Sharath Manchikatla, Arthur Arreguin ## 5/13/2021",
   "private": true,
   "scripts": {
     "start": "node ./bin/www",
     "docs": "jsdoc -c jsdoc.json",
-    "dev-start": "DEBUG=project:* npm start",
     "dev": "nodemon ./bin/www",
     "test": "mocha --recursive --exit",
-    "lint": "eslint . --config=.eslintrc.js",
-    "lint-fix": "eslint . --config=.eslintrc.js --fix",
+    "lint:node": "npx eslint -c conf.eslint.node.json ./utils/* ./routes/* ./models/* ./helpers/* ./db/* ./controllers/* ./app.js",
+    "lint:browser": "npx eslint -c conf.eslint.browser.json ./public/javascript",
     "bk-approve": "backstop approve",
     "bk-test": "backstop test",
     "reference": "backstop reference",
@@ -25,7 +24,6 @@
     "npm": ">=6.14.0"
   },
   "dependencies": {
-    "backstopjs": "^5.3.2",
     "cookie-parser": "~1.4.4",
     "cors": "^2.8.5",
     "debug": "~2.6.9",
@@ -43,6 +41,7 @@
   },
   "main": "app.js",
   "devDependencies": {
+    "backstopjs": "^5.3.2",
     "eslint": "^7.25.0",
     "eslint-config-airbnb-base": "^14.2.1",
     "eslint-config-standard": "^16.0.2",

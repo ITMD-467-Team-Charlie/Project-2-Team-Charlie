@@ -1,0 +1,59 @@
+{
+  "settings": {
+    "_version": "App Node Config, v. 1.0.0",
+    "_eslint_version": "7.25.0",
+    "_rules_url": "https://eslint.org/docs/rules/"
+  },
+  "parserOptions": {
+    "ecmaVersion": 8
+  },
+  "env": {
+    "es6": true,
+    "node": true
+  },
+  "extends": "eslint:recommended",
+  "rules": {
+    "no-console": "off",
+    "no-func-names": "off",
+    "no-template-curly-in-string": "error",
+    "block-scoped-var": "warn",
+    "brace-style": "warn",
+    "curly": ["warn", "multi-line"],
+    "dot-location": ["warn", "property"],
+    "dot-notation": "warn",
+    "eqeqeq": ["warn", "always"],
+    "no-multi-spaces": ["warn", { "ignoreEOLComments": true, "exceptions": { "Property": true } }],
+    "no-sequences": "error",
+    "require-await": "warn",
+    "vars-on-top": "error",
+    "yoda": "error",
+    "strict": ["error", "global"],
+    "no-undef": "warn",
+    "no-undefined": "error",
+    "callback-return": "error",
+    "global-require": "warn",
+    "handle-callback-err": "error",
+    "no-mixed-requires": "warn",
+    "no-path-concat": "error",
+    "comma-dangle": ["warn", "never"],
+    "comma-spacing": ["warn", { "before": false, "after": true }],
+    "func-call-spacing": "warn",
+    "indent": ["warn", 2],
+    "linebreak-style": ["error", "unix"],
+    "multiline-comment-style": "off",
+    "newline-per-chained-call": ["warn", { "ignoreChainWithDepth": 2 }],
+    "spaced-comment": ["warn", "always"],
+    "semi": ["warn", "always"],
+    "semi-spacing": ["warn", {"before": false, "after": true}],
+    "arrow-body-style": ["error", "as-needed"],
+    "arrow-parens": ["error", "as-needed", { "requireForBlockBody": true }],
+    "arrow-spacing": "warn",
+    "no-confusing-arrow": "error",
+    "prefer-rest-params": "error",
+    "prefer-template": "warn",
+    "prefer-destructuring": ["error", {"object": false, "array": false}],
+    "consistent-return": "off",
+    "no-underscore-dangle": "off",
+    "template-curly-spacing": ["warn", "never"]
+  }
+}
