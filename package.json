@@ -20,6 +20,9 @@
     "type": "git",
     "url": "git+https://github.com/ITMD-467-Team-Charlie/Project-2-Team-Charlie.git"
   },
+  { 
+    "engines" : { "node" : ">=0.12" } 
+   }
   "dependencies": {
     "backstopjs": "^5.3.2",
     "cookie-parser": "~1.4.4",
