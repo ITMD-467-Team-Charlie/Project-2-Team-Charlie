@@ -9,14 +9,5 @@ deploy:
 services: 
 install: npm install --save-dev
 script:
-<<<<<<< HEAD
-<<<<<<< HEAD
-- npm test
-=======
-  - npm test
-  
->>>>>>> fc43fdfea4bc3a6af39ba0e5e510eecb06cc579a
-=======
-- npm test
 
->>>>>>> 8bd285edde822c17373a3276c23c49cc7c3c207c
+- npm test
