@@ -2,12 +2,17 @@ language: node_js
 node_js:
 - 10.19.0
 deploy:
-  provider: heroku
-  api_key:
-    secure: THF+CYjXzM67phXeM49dKpCu6317EPvmZZZNYsUnIgnuDPw6mxyUK/sD1njTzT8JU5oMZ1K5JDgdNSiaUMKXpfU6rwHeSiBOMON4gWgid09WWvPjfru/l3tz0G2dNFbQPWffoVEb5VtIQIARHXUrU9em3LojOUWpZ+sUa4UOzrTDMNBGmod1YEVltnbsYh1PqO9Uyg38mbuHTqaVQsZPGq0yOmQ8Y+rcM5Gt3Geadjx5plbg8btPinYKV6oiF710BBJ5lxATdBl4AA06PirwXsOrnMl22hqWsd3RGCntlTdjhdf0gc6SAOB3FtUSYfAcwjKqcNoNyDZZcJNTKDFIZ5aZEBlxfZDP+R5Y60z9Kdhzaa1YvCWyutvhgyJKLqP99E+9xFuM/wW7SjWojU7f8Ap6Dh105kBYK19dEHWABRFXGG2RSiApEcxbe7RA3X5Hw3HmH4iuxNU1mC0k2bAjgsenmv4zeAgkY9KCmVi2zFFttmuqJn9wANAqZZjkE807b5ni4AeQ0J4FIIDLoBESisFhBwq906c34dF09wMWHPVl3EivtySONeTL6x0RW1s21kdlEEQJmFk7rcUfXVK/Qy2iiRt1LkuKy1hgls2E3lUwYpazo6UsLEMF+v/LV31eQ/wdWraVfKiyc6CPgcPHX7IY8TADfCM3lduGz+L7tzg=
-  app: health-guide
+
+  - provider: heroku
+    api_key:
+      secure: THF+CYjXzM67phXeM49dKpCu6317EPvmZZZNYsUnIgnuDPw6mxyUK/sD1njTzT8JU5oMZ1K5JDgdNSiaUMKXpfU6rwHeSiBOMON4gWgid09WWvPjfru/l3tz0G2dNFbQPWffoVEb5VtIQIARHXUrU9em3LojOUWpZ+sUa4UOzrTDMNBGmod1YEVltnbsYh1PqO9Uyg38mbuHTqaVQsZPGq0yOmQ8Y+rcM5Gt3Geadjx5plbg8btPinYKV6oiF710BBJ5lxATdBl4AA06PirwXsOrnMl22hqWsd3RGCntlTdjhdf0gc6SAOB3FtUSYfAcwjKqcNoNyDZZcJNTKDFIZ5aZEBlxfZDP+R5Y60z9Kdhzaa1YvCWyutvhgyJKLqP99E+9xFuM/wW7SjWojU7f8Ap6Dh105kBYK19dEHWABRFXGG2RSiApEcxbe7RA3X5Hw3HmH4iuxNU1mC0k2bAjgsenmv4zeAgkY9KCmVi2zFFttmuqJn9wANAqZZjkE807b5ni4AeQ0J4FIIDLoBESisFhBwq906c34dF09wMWHPVl3EivtySONeTL6x0RW1s21kdlEEQJmFk7rcUfXVK/Qy2iiRt1LkuKy1hgls2E3lUwYpazo6UsLEMF+v/LV31eQ/wdWraVfKiyc6CPgcPHX7IY8TADfCM3lduGz+L7tzg=
+    app: health-guide
+    on:
+      repo: ITMD-467-Team-Charlie/Project-2-Team-Charlie
+      branch: main
 services: 
 install: npm install --save-dev
 script:
 
-- npm test
+  - npm test
+  
