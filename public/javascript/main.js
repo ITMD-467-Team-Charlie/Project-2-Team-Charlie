@@ -60,7 +60,6 @@ function printHtml(dishes) {
 
     const dishCard = `
             <div class="search-column">
-            <a id="dish" data-dish="${id}" onclick="getDishDetails(this.getAttribute('data-dish'));">
             <div class="card">
               <img src="${dish.recipe.image}" alt="${dish.recipe.label}" class="card-image" onerror="this.src='/images/noimage.png'">
               <div class="search-container">
@@ -95,8 +94,9 @@ function printHtml(dishes) {
               </figure>
               </div>
               </div>
+              <a href="/details/recipe?rid=${dish.id}" target="_blank">+More Details</a>
+              <button class="bclass" id="save" data-id="${dish.id}" onClick="getDishDetails(this);">Save</button>
             </div>
-            </a>
           </div>
         `;
     html += dishCard;
@@ -118,7 +118,7 @@ function loadArticle(params, query) {
     to = 30;
   }
   $.ajax({
-    url: `/api/recepie?q=${searchText}&from=${recordsOffset}&to=${to}`,
+    url: `/api/recipe?q=${searchText}&from=${recordsOffset}&to=${to}`,
     type: 'get', // send it through get method
     success(response) {
       // Do Something
@@ -151,7 +151,7 @@ $(window).scroll(() => {
     / (($(document).height() - $(window).height()))) * 100
   );
   // get new data only if scroll bar is greater 70% of screen
-  if (scrollPercent > 70) {
+  if (document.getElementById('lazy').value ==='true' && scrollPercent > 70) {
     // this condition only satisfy ony one pending ajax completed
     // and records offset is less than  total record
 
@@ -169,6 +169,11 @@ $(window).scroll(() => {
       loadArticle({ action: 'initialization' }, el.getAttribute('data-id'));
     }
   });
+});
+
+// adds event listner to a save dish to profile
+$(":button").click(function() {
+  getDishDetails(this);
 });
 
 const maxCal = document.getElementById('maxcal');
@@ -218,33 +223,18 @@ window.onclick = function closeModal(event) {
 };
 
 /* eslint-disable no-unused-vars */
-function getDishDetails(id) {
-  $.post('/addrecepie', {
-    rid: id
-  },
-  (data, status) => {
-    console.log(`Data: ${data}\nStatus: ${status}`);
-  });
-
-  // var fetched_json = sessionStorage.getItem(id);
-  // var obj = JSON.parse(fetched_json);
-  // var nutrients = '';
-  //
-  // document.getElementById('tags').innerHTML = "<div class='details-title'>Labels</div>"
-  // + makeUL(obj.healthLabels, 'label') + makeUL(obj.dietLabels, 'label');
-  //
-  // for (let digest of obj.digest) {
-  //     var total = digest.total.toFixed(0);
-  //     var daily = digest.daily.toFixed(0);
-  //     var h = `<tr><td>${digest.label}</td><td>${total}</td><td>${daily}</td>
-  // <td>${digest.unit}</td><tr>`;
-  //     nutrients += h;
-  // }
-  // document.getElementById('digest').innerHTML = "<div class='details-title'>Nutrients</div>
-  // <table><tr><th></th><th>Total</th><th>Daily</th></tr>" + nutrients + '</table>';
-  // document.getElementById('ingredientLines').innerHTML =
-  // "<div class='details-title'>Ingredients</div>" + makeUL(obj.ingredientLines, 'ing');
-  // document.getElementById('cautions').innerHTML =
-  // "<div class='details-title'>Cautions</div>" + makeUL(obj.cautions, 'cau');
-  // document.getElementById('details-model').style.display = 'block';*
+function getDishDetails(el) {
+  const id = el.getAttribute('data-id');
+  const i = el.getAttribute('id');
+  if(i==='save'){
+    $.post('/addrecepie', {
+      rid: id
+    },
+    (data, status) => {
+      if(status==='success'){
+        el.disabled = true;
+      }
+      console.log(`Data: ${data}\nStatus: ${status}`);
+    });
+  }
 }

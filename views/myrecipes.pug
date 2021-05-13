@@ -5,26 +5,26 @@ head
   meta(name='viewport' content='width=device-width, initial-scale=1')
   link(rel='stylesheet' href='/stylesheets/screen.css')
   link(rel='stylesheet' href='/stylesheets/search-box.css')
-  link(rel='stylesheet' href='/stylesheets/dishdetails.css')
   link(rel='stylesheet' href='/stylesheets/chart.css')
   script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js')
 // Side navigation
 nav#mySidenav.sidenav
   section.sidenav-close
     a#ham-close.closebtn &times;
-  section.sidenav-title  Max. Calories
+  section.sidenav-title  Max. Calories (Disabled)
   section.slidecontainer
-    input#maxcal.slider(type='range' min='0' max='10000' value='10000' step='100')
+    input#lazy(type='hidden' name='laxy' value='false')
+    input#maxcal.slider(type='range' min='0' max='10000' value='10000' step='100' disabled='true')
     p
       | Value: 
       span#demo2
-  section.sidenav-title  Max. Ingredients
+  section.sidenav-title  Max. Ingredients  (Disabled)
   section.slidecontainer
-    input#maxing.slider(type='range' min='0' max='50' value='25' step='5')
+    input#maxing.slider(type='range' min='0' max='50' value='25' step='5' disabled='true')
     p
       | Value: 
       span#demo3
-  button#filter.block(type='button') Submit
+  button#filter.block(type='button' disabled='true') Submit
 // Page content
 main.main
   nav.navbar
@@ -149,7 +149,7 @@ main.main
   section#display-dishes.search-content
     for dish in dishes
       section.search-column
-        a#dish(data-dish=dish.rid onclick="getDishDetails(this.getAttribute('data-dish'));")
+        section#dish(data-dish=dish.rid)
           section.card
             img.card-image(src=dish.image alt=dish.name onerror="this.src='/images/noimage.png'")
             section.search-container
@@ -186,6 +186,7 @@ main.main
                           span.value #{dish.carbr}%
                         span.block-chart(title='Protine' style='width:'+dish.protiner+'%;')
                           span.value #{dish.protiner}%
+            a(href='/details/recipe?rid='+dish.rid target='_blank') +More Details
 
   // The Modal
   section#details-model.details-modal

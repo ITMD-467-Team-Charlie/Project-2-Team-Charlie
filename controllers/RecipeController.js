@@ -87,7 +87,7 @@ function saveJson(dishes) {
         dietLabels: dish.recipe.dietLabels,
         healthLabels: dish.recipe.healthLabels,
         cautions: dish.recipe.cautions,
-        ingredientLines: dish.recipe.cautions,
+        ingredientLines: dish.recipe.ingredientLines,
         cuisineType: dish.recipe.cuisineType,
         mealType: dish.recipe.mealType,
         fat: dish.fat,
@@ -178,6 +178,26 @@ exports.recipeListPage = function recipepage(req, res, profileData) {
     });
   } catch (err) {
     // throw error in json response with status 500.
+    return apiResponse.ErrorResponse(res, err);
+  }
+};
+
+/**
+ * Fetch recipes deatils from the database
+ * @param req Request object
+ * @param res Response object
+ * @returns {Object} HTML
+ */
+exports.recipeDetails = async function details(req, res) {
+  try {
+    const recipeDetails = await RecipeModel.find({ rid: req.query.rid });
+    let hl = recipeDetails[0].healthLabels;
+    let dl = recipeDetails[0].dietLabels;
+    Array.prototype.push.apply(hl, dl);
+    res.render('details', { result: true, labels: hl, cautions: recipeDetails[0].cautions, inglines: recipeDetails[0].ingredientLines, digest: recipeDetails[0].digest});
+  } catch (err) {
+    // throw error in json response with status 500.
+    console.log(err);
     return apiResponse.ErrorResponse(res, err);
   }
 };

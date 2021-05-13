@@ -1,0 +1,43 @@
+doctype html
+head
+  title Nutrition Guide
+  meta(charset='utf-8')
+  meta(name='viewport' content='width=device-width, initial-scale=1')
+  link(rel='stylesheet' href='/stylesheets/screen.css')
+  link(rel='stylesheet' href='/stylesheets/dishdetails.css')
+// Page content
+main.main
+  // The Modal
+  section#details-model.details-modal
+    // Modal content
+    section.details-modal-content
+      section.row-details
+        section#ingredientLines.col-11.menu-details
+          section.details-title Ingredients
+          ul.ing
+          for line in inglines
+            li #{line}
+        section#digest.col-11.table-details
+          section.details-title Nutrients
+          table
+            tbody
+              tr
+                th
+                th Total
+                th Unit
+              for d in digest
+                tr
+                  td #{d.label}
+                  td #{(d.total).toFixed(1)} 
+                  td #{d.unit}
+      section.row-details
+        section#tags.col-11.labels
+          section.details-title Labels
+          ul.lable
+          for label in labels
+            li #{label}
+        section#cautions.col-11.labels.red
+          section.details-title Cautions
+          ul.cau
+          for caution in cautions
+            li #{caution}

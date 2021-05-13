@@ -106,9 +106,10 @@ exports.userRecipeList = function getrecipelist(req, res) {
     const usercookie = req.cookies.profile;
     if (typeof usercookie === 'undefined') { // Executes if variable is null OR undefined
       res.render('profile', { result: false, user: '', title: 'Nutrition Guide : Team Charlie Project' });
-    } else if (req.session.user !== null) {
+    } else if (req.session.user !== 'undefined' && req.session.user !== null) {
       RecipeController.recipeListPage(req, res, req.session.user);
     } else {
+      console.log('fetch from db');
       // get user profile from DB and save in session
       ProfileModel.findById(usercookie, (err, profile) => {
         if (err) {
@@ -133,7 +134,8 @@ exports.userRecipeList = function getrecipelist(req, res) {
             cfats: profile.cfats,
             carbs: profile.carbs,
             protons: profile.protons,
-            fats: profile.fats
+            fats: profile.fats,
+            recipes: profile.recipes
           };
           req.session.user = profileData;
           RecipeController.recipeListPage(req, res, profileData);
@@ -183,13 +185,14 @@ exports.saveRecepie = async function saverecepie(req, res) {
     const profileid = req.cookies.profile;
     const currentUser = await ProfileModel.findById(profileid);
     if (currentUser) {
-      console.log('currentUser._id', currentUser._id);
       const recipeToAdd = await RecipeModel.find({ rid: req.body.rid });
       console.log('recipeToAdd', recipeToAdd[0]._id);
-      currentUser.recipes.push(recipeToAdd[0]._id);
-      recipeToAdd[0].profiles.push(currentUser._id);
-      await recipeToAdd[0].save();
-      await currentUser.save();
+      if(!currentUser.recipes.includes(recipeToAdd[0]._id)){
+        currentUser.recipes.push(recipeToAdd[0]._id);
+        recipeToAdd[0].profiles.push(currentUser._id);
+        await recipeToAdd[0].save();
+        await currentUser.save();
+      }
       res.json(currentUser);
     } else {
       // user doesnt exist
