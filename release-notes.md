@@ -1,3 +1,20 @@
+# __v1.0.0__
+
+### [Public Release] - Thursday, 13 May 2021
+
+### Features
+
+1. Added PM2
+2. Created test cases
+3. Added Heroku
+4. Added travis
+5. Bug fixes
+
+### ScreenShot
+#### PM2
+![1](https://user-images.githubusercontent.com/43916250/118226058-da1fdc00-b44b-11eb-8dfd-a412b60398ec.png)
+#### TravisCI
+![2](https://user-images.githubusercontent.com/43916250/118226167-12bfb580-b44c-11eb-8d79-6378ee98f768.png)
 # __v1.0.0-beta__
 
 ### [Beta Release] - Monday, 3 May 2021
