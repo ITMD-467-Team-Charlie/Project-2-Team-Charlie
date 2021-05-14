@@ -1,4 +1,10 @@
 [![Build Status](https://travis-ci.com/ITMD-467-Team-Charlie/Project-2-Team-Charlie.svg?branch=main)](https://travis-ci.com/ITMD-467-Team-Charlie/Project-2-Team-Charlie)
+https://img.shields.io/badge/MongoDB-4EA94B?style=for-the-badge&logo=mongodb&logoColor=white
+https://img.shields.io/badge/npm-CB3837?style=for-the-badge&logo=npm&logoColor=white
+https://img.shields.io/badge/Node.js-43853D?style=for-the-badge&logo=node.js&logoColor=white
+https://img.shields.io/badge/Express.js-000000?style=for-the-badge&logo=express&logoColor=white
+https://img.shields.io/badge/Heroku-430098?style=for-the-badge&logo=heroku&logoColor=white
+https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white
 
 # Project 2 Team Charlie
 
