@@ -5,10 +5,23 @@
     "name": "profile",
     "value": "j%3A%22608b07244ab72b24d9119c1b%22",
     "expirationDate": 1798790400,
-    "hostOnly": false,
+    "hostOnly": true,
     "httpOnly": false,
     "secure": false,
     "session": false,
-    "sameSite": "no_restriction"
+    "sameSite": "none"
+  },
+  {
+    "domain": "localhost",
+    "path": "/",
+    "name": "connect.sid",
+    "value": "s%3AUbiuuI3A5IVvZWoZgyIgzsXPk4DoI1kn.YonqA0cLLLt2I5MVSgMan6ebBgBUjpUX6Fg4yael7JU",
+    "expirationDate": "Session",
+    "hostOnly": true,
+    "httpOnly": true,
+    "secure": false,
+    "session": false,
+    "sameSite": "none"
   }
 ]
+
